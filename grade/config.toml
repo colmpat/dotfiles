@@ -1,0 +1,32 @@
+org = "cs315-s22"
+testspath = "~/tests"
+students = [
+ "manak-ahluwalia",
+ "Akkun716",
+ "jabenitez217",
+ "KevinHaolinChen",
+ "georginajcruz",
+ "sinnedqd",
+ "diofeng",
+ "YulongGuo0229",
+ "pablojosecode",
+ "nickihashemi",
+ "hbyhibiki",
+ "rkaur17",
+ "Justigo",
+ "Cheonhong",
+	"jinXus135",
+	"YXL628",
+	"gmai44",
+	"nan0spasm",
+	"selviipalani",
+	"mirajp21",
+	"PokorneyJo",
+	"abrichards10",
+	"HunterMRocha",
+	"vysalinas615",
+	"Matthew-Tsang",
+	"uderek1",
+	"KristampsW",
+	"zwang203"
+]

@@ -1,0 +1,45 @@
+2020-10-14 11:35:23,145 DEBUG    root            Loaded Command Group: ['gcloud', 'init']
+2020-10-14 11:35:23,147 DEBUG    root            Running [gcloud.init] with arguments: []
+2020-10-14 11:35:23,147 INFO     ___FILE_ONLY___ Welcome! This command will take you through the configuration of gcloud.
+
+
+2020-10-14 11:35:23,149 INFO     ___FILE_ONLY___ Your current configuration has been set to: [default]
+
+
+2020-10-14 11:35:23,149 INFO     ___FILE_ONLY___ You can skip diagnostics next time by using the following flag:
+
+2020-10-14 11:35:23,149 INFO     ___FILE_ONLY___   gcloud init --skip-diagnostics
+
+
+2020-10-14 11:35:23,149 INFO     ___FILE_ONLY___ Network diagnostic detects and fixes local network connection issues.
+
+2020-10-14 11:35:23,150 INFO     ___FILE_ONLY___ Checking network connection...
+2020-10-14 11:35:24,827 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): accounts.google.com:443
+2020-10-14 11:35:24,942 DEBUG    urllib3.connectionpool https://accounts.google.com:443 "GET / HTTP/1.1" 302 338
+2020-10-14 11:35:25,038 DEBUG    urllib3.connectionpool https://accounts.google.com:443 "GET /ServiceLogin?passive=1209600&continue=https%3A%2F%2Faccounts.google.com%2F&followup=https%3A%2F%2Faccounts.google.com%2F HTTP/1.1" 200 None
+2020-10-14 11:35:25,192 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): cloudresourcemanager.googleapis.com:443
+2020-10-14 11:35:25,468 DEBUG    urllib3.connectionpool https://cloudresourcemanager.googleapis.com:443 "GET /v1beta1/projects HTTP/1.1" 401 None
+2020-10-14 11:35:25,472 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): www.googleapis.com:443
+2020-10-14 11:35:25,629 DEBUG    urllib3.connectionpool https://www.googleapis.com:443 "GET /auth/cloud-platform HTTP/1.1" 200 None
+2020-10-14 11:35:25,633 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): dl.google.com:443
+2020-10-14 11:35:25,869 DEBUG    urllib3.connectionpool https://dl.google.com:443 "GET /dl/cloudsdk/channels/rapid/components-2.json HTTP/1.1" 200 139772
+2020-10-14 11:35:25,998 INFO     ___FILE_ONLY___ Reachability Check passed.
+
+2020-10-14 11:35:25,998 INFO     ___FILE_ONLY___ Network diagnostic passed (1/1 checks passed).
+
+
+2020-10-14 11:35:31,393 DEBUG    root            Loaded Command Group: ['gcloud', 'auth']
+2020-10-14 11:35:31,436 DEBUG    root            Loaded Command Group: ['gcloud', 'auth', 'login']
+2020-10-14 11:35:31,438 INFO     root            Executing: [gcloud auth login --force --brief]
+2020-10-14 11:35:31,439 DEBUG    root            Running [gcloud.auth.login] with arguments: [--brief: "True", --force: "True"]
+2020-10-14 11:35:31,565 INFO     ___FILE_ONLY___ Your browser has been opened to visit:
+
+    https://accounts.google.com/o/oauth2/auth?client_id=32555940559.apps.googleusercontent.com&redirect_uri=http%3A%2F%2Flocalhost%3A8085%2F&scope=openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fappengine.admin+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcompute+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Faccounts.reauth&code_challenge=QvABxmldDv4oDRcIBqkCIEaQl6H6ng9jVuipNxdnp5k&code_challenge_method=S256&access_type=offline&response_type=code&prompt=select_account
+
+
+
+2020-10-14 11:36:10,655 INFO     ___FILE_ONLY___ 
+
+Command killed by keyboard interrupt
+
+

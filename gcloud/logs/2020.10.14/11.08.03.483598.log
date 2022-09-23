@@ -1,0 +1,19 @@
+2020-10-14 11:08:03,484 DEBUG    root            Loaded Command Group: ['gcloud', 'components']
+2020-10-14 11:08:03,487 DEBUG    root            Loaded Command Group: ['gcloud', 'components', 'install']
+2020-10-14 11:08:03,489 DEBUG    root            Running [gcloud.components.install] with arguments: [COMPONENT-IDS:1: "['app-engine-java”']"]
+2020-10-14 11:08:04,045 DEBUG    root            (gcloud.components.install) The following components are unknown [app-engine-java”].
+Traceback (most recent call last):
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/calliope/cli.py", line 983, in Execute
+    resources = calliope_command.Run(cli=self, args=args)
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 808, in Run
+    resources = command_instance.Run(args)
+  File "/Users/colmlang/google-cloud-sdk/lib/surface/components/install.py", line 84, in Run
+    args.component_ids, allow_no_backup=args.allow_no_backup)
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/core/updater/update_manager.py", line 854, in Install
+    restart_args=restart_args)
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/core/updater/update_manager.py", line 899, in Update
+    update_seed = self._HandleInvalidUpdateSeeds(diff, version, update_seed)
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/core/updater/update_manager.py", line 1088, in _HandleInvalidUpdateSeeds
+    raise InvalidComponentError(' '.join(msgs))
+googlecloudsdk.core.updater.update_manager.InvalidComponentError: The following components are unknown [app-engine-java”].
+2020-10-14 11:08:04,046 ERROR    root            (gcloud.components.install) The following components are unknown [app-engine-java”].

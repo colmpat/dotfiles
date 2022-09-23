@@ -1,0 +1,14 @@
+2020-10-16 12:51:17,164 DEBUG    root            Loaded Command Group: ['gcloud', 'projects']
+2020-10-16 12:51:17,169 DEBUG    root            Loaded Command Group: ['gcloud', 'projects', 'create']
+2020-10-16 12:51:17,172 DEBUG    root            Running [gcloud.projects.create] with arguments: [--set-as-default: "True", PROJECT_ID: "mastermindapi-colmpat"]
+2020-10-16 12:51:17,608 INFO     ___FILE_ONLY___ Create in progress for [https://cloudresourcemanager.googleapis.com/v1/projects/mastermindapi-colmpat].
+
+2020-10-16 12:51:17,609 INFO     ___FILE_ONLY___ Waiting for [operations/cp.6654630429782873024] to finish...
+2020-10-16 12:51:22,282 DEBUG    root            Enabling cloudapis.googleapis.com
+2020-10-16 12:51:22,282 INFO     ___FILE_ONLY___ Enabling service [cloudapis.googleapis.com] on project [mastermindapi-colmpat]...
+
+2020-10-16 12:51:27,598 INFO     ___FILE_ONLY___ Operation "operations/acf.62df2fda-dee2-412c-907c-a4adacdab8f9" finished successfully.
+
+2020-10-16 12:51:27,600 INFO     ___FILE_ONLY___ Updated property [core/project] to [mastermindapi-colmpat].
+
+2020-10-16 12:51:27,602 INFO     root            Display format: "none"

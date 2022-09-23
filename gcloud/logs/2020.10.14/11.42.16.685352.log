@@ -1,0 +1,14 @@
+2020-10-14 11:42:16,692 DEBUG    root            Loaded Command Group: ['gcloud', 'projects']
+2020-10-14 11:42:16,699 DEBUG    root            Loaded Command Group: ['gcloud', 'projects', 'create']
+2020-10-14 11:42:16,702 DEBUG    root            Running [gcloud.projects.create] with arguments: [--set-as-default: "True", PROJECT_ID: "colmhello"]
+2020-10-14 11:42:17,305 INFO     ___FILE_ONLY___ Create in progress for [https://cloudresourcemanager.googleapis.com/v1/projects/colmhello].
+
+2020-10-14 11:42:17,306 INFO     ___FILE_ONLY___ Waiting for [operations/cp.7124496248787616170] to finish...
+2020-10-14 11:42:21,544 DEBUG    root            Enabling cloudapis.googleapis.com
+2020-10-14 11:42:21,544 INFO     ___FILE_ONLY___ Enabling service [cloudapis.googleapis.com] on project [colmhello]...
+
+2020-10-14 11:42:26,934 INFO     ___FILE_ONLY___ Operation "operations/acf.a0813c44-1c71-40c0-a5e1-b1040378bc69" finished successfully.
+
+2020-10-14 11:42:26,937 INFO     ___FILE_ONLY___ Updated property [core/project] to [colmhello].
+
+2020-10-14 11:42:26,939 INFO     root            Display format: "none"

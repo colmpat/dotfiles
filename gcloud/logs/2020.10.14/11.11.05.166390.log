@@ -1,0 +1,32 @@
+2020-10-14 11:11:05,166 DEBUG    root            Running [gcloud] with arguments: [-v: "None"]
+2020-10-14 11:11:05,167 DEBUG    root            Loaded Command Group: ['gcloud', 'version']
+2020-10-14 11:11:05,168 DEBUG    root            Running [gcloud.version] with arguments: []
+2020-10-14 11:11:05,172 INFO     root            Display format: "flattened[no-pad,separator=" "]"
+2020-10-14 11:11:05,172 INFO     ___FILE_ONLY___ Google Cloud SDK
+2020-10-14 11:11:05,173 INFO     ___FILE_ONLY___  
+2020-10-14 11:11:05,173 INFO     ___FILE_ONLY___ 314.0.0
+
+2020-10-14 11:11:05,173 INFO     ___FILE_ONLY___ app-engine-java
+2020-10-14 11:11:05,173 INFO     ___FILE_ONLY___  
+2020-10-14 11:11:05,173 INFO     ___FILE_ONLY___ 1.9.82
+
+2020-10-14 11:11:05,173 INFO     ___FILE_ONLY___ app-engine-python
+2020-10-14 11:11:05,173 INFO     ___FILE_ONLY___  
+2020-10-14 11:11:05,173 INFO     ___FILE_ONLY___ 1.9.91
+
+2020-10-14 11:11:05,173 INFO     ___FILE_ONLY___ bq
+2020-10-14 11:11:05,173 INFO     ___FILE_ONLY___  
+2020-10-14 11:11:05,173 INFO     ___FILE_ONLY___ 2.0.62
+
+2020-10-14 11:11:05,173 INFO     ___FILE_ONLY___ cloud-datastore-emulator
+2020-10-14 11:11:05,174 INFO     ___FILE_ONLY___  
+2020-10-14 11:11:05,174 INFO     ___FILE_ONLY___ 2.1.0
+
+2020-10-14 11:11:05,174 INFO     ___FILE_ONLY___ core
+2020-10-14 11:11:05,174 INFO     ___FILE_ONLY___  
+2020-10-14 11:11:05,174 INFO     ___FILE_ONLY___ 2020.10.09
+
+2020-10-14 11:11:05,174 INFO     ___FILE_ONLY___ gsutil
+2020-10-14 11:11:05,174 INFO     ___FILE_ONLY___  
+2020-10-14 11:11:05,174 INFO     ___FILE_ONLY___ 4.53
+

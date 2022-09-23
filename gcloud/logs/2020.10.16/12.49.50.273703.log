@@ -1,0 +1,39 @@
+2020-10-16 12:49:50,276 DEBUG    root            Loaded Command Group: ['gcloud', 'projects']
+2020-10-16 12:49:50,279 DEBUG    root            Loaded Command Group: ['gcloud', 'projects', 'list']
+2020-10-16 12:49:50,281 DEBUG    root            Running [gcloud.projects.list] with arguments: []
+2020-10-16 12:49:50,281 INFO     root            client_filter="None" server_filter="None"
+2020-10-16 12:49:50,309 INFO     root            Display format: "
+    table(
+      projectId:sort=1,
+      name,
+      projectNumber
+    )
+"
+2020-10-16 12:49:50,630 INFO     ___FILE_ONLY___ PROJECT_ID
+2020-10-16 12:49:50,630 INFO     ___FILE_ONLY___              
+2020-10-16 12:49:50,630 INFO     ___FILE_ONLY___ NAME
+2020-10-16 12:49:50,630 INFO     ___FILE_ONLY___               
+2020-10-16 12:49:50,630 INFO     ___FILE_ONLY___ PROJECT_NUMBER
+2020-10-16 12:49:50,630 INFO     ___FILE_ONLY___ 
+
+2020-10-16 12:49:50,631 INFO     ___FILE_ONLY___ brilliant-will-292518
+2020-10-16 12:49:50,631 INFO     ___FILE_ONLY___   
+2020-10-16 12:49:50,631 INFO     ___FILE_ONLY___ My First Project
+2020-10-16 12:49:50,631 INFO     ___FILE_ONLY___   
+2020-10-16 12:49:50,631 INFO     ___FILE_ONLY___ 757086936282
+2020-10-16 12:49:50,631 INFO     ___FILE_ONLY___ 
+
+2020-10-16 12:49:50,631 INFO     ___FILE_ONLY___ colmhello
+2020-10-16 12:49:50,631 INFO     ___FILE_ONLY___               
+2020-10-16 12:49:50,631 INFO     ___FILE_ONLY___ colmhello
+2020-10-16 12:49:50,632 INFO     ___FILE_ONLY___          
+2020-10-16 12:49:50,632 INFO     ___FILE_ONLY___ 480817333561
+2020-10-16 12:49:50,632 INFO     ___FILE_ONLY___ 
+
+2020-10-16 12:49:50,632 INFO     ___FILE_ONLY___ colmpathello
+2020-10-16 12:49:50,632 INFO     ___FILE_ONLY___            
+2020-10-16 12:49:50,632 INFO     ___FILE_ONLY___ colmpathello
+2020-10-16 12:49:50,632 INFO     ___FILE_ONLY___       
+2020-10-16 12:49:50,632 INFO     ___FILE_ONLY___ 1015094386184
+2020-10-16 12:49:50,633 INFO     ___FILE_ONLY___ 
+

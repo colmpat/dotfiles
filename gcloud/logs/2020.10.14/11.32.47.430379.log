@@ -1,0 +1,125 @@
+2020-10-14 11:32:47,434 DEBUG    root            Loaded Command Group: ['gcloud', 'init']
+2020-10-14 11:32:47,436 DEBUG    root            Running [gcloud.init] with arguments: []
+2020-10-14 11:32:47,436 INFO     ___FILE_ONLY___ Welcome! This command will take you through the configuration of gcloud.
+
+
+2020-10-14 11:32:47,438 INFO     ___FILE_ONLY___ Your current configuration has been set to: [default]
+
+
+2020-10-14 11:32:47,438 INFO     ___FILE_ONLY___ You can skip diagnostics next time by using the following flag:
+
+2020-10-14 11:32:47,438 INFO     ___FILE_ONLY___   gcloud init --skip-diagnostics
+
+
+2020-10-14 11:32:47,438 INFO     ___FILE_ONLY___ Network diagnostic detects and fixes local network connection issues.
+
+2020-10-14 11:32:47,439 INFO     ___FILE_ONLY___ Checking network connection...
+2020-10-14 11:32:48,578 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): accounts.google.com:443
+2020-10-14 11:32:48,709 DEBUG    urllib3.connectionpool https://accounts.google.com:443 "GET / HTTP/1.1" 302 338
+2020-10-14 11:32:48,787 DEBUG    urllib3.connectionpool https://accounts.google.com:443 "GET /ServiceLogin?passive=1209600&continue=https%3A%2F%2Faccounts.google.com%2F&followup=https%3A%2F%2Faccounts.google.com%2F HTTP/1.1" 200 None
+2020-10-14 11:32:48,840 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): cloudresourcemanager.googleapis.com:443
+2020-10-14 11:32:49,104 DEBUG    urllib3.connectionpool https://cloudresourcemanager.googleapis.com:443 "GET /v1beta1/projects HTTP/1.1" 401 None
+2020-10-14 11:32:49,108 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): www.googleapis.com:443
+2020-10-14 11:32:49,273 DEBUG    urllib3.connectionpool https://www.googleapis.com:443 "GET /auth/cloud-platform HTTP/1.1" 200 None
+2020-10-14 11:32:49,278 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): dl.google.com:443
+2020-10-14 11:32:49,524 DEBUG    urllib3.connectionpool https://dl.google.com:443 "GET /dl/cloudsdk/channels/rapid/components-2.json HTTP/1.1" 200 139772
+2020-10-14 11:32:49,672 INFO     ___FILE_ONLY___ Reachability Check passed.
+
+2020-10-14 11:32:49,672 INFO     ___FILE_ONLY___ Network diagnostic passed (1/1 checks passed).
+
+
+2020-10-14 11:32:51,865 DEBUG    root            Loaded Command Group: ['gcloud', 'auth']
+2020-10-14 11:32:51,911 DEBUG    root            Loaded Command Group: ['gcloud', 'auth', 'login']
+2020-10-14 11:32:51,912 INFO     root            Executing: [gcloud auth login --force --brief]
+2020-10-14 11:32:51,914 DEBUG    root            Running [gcloud.auth.login] with arguments: [--brief: "True", --force: "True"]
+2020-10-14 11:32:52,040 INFO     ___FILE_ONLY___ Your browser has been opened to visit:
+
+    https://accounts.google.com/o/oauth2/auth?client_id=32555940559.apps.googleusercontent.com&redirect_uri=http%3A%2F%2Flocalhost%3A8085%2F&scope=openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fappengine.admin+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcompute+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Faccounts.reauth&code_challenge=E4jOFuGZ13EeMfam7fRH3jMUqO60WoarmmNVSia8o_U&code_challenge_method=S256&access_type=offline&response_type=code&prompt=select_account
+
+
+
+2020-10-14 11:33:57,547 ERROR    root            There was a problem with web authentication. Try running again with --no-launch-browser.
+2020-10-14 11:33:57,548 DEBUG    root            (gcloud.auth.login) Failed to find "code" in the query parameters of the redirect.
+Traceback (most recent call last):
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/core/credentials/store.py", line 1187, in RunWebFlow
+    cred = flow.Run(webflow, launch_browser=launch_browser, http=http.Http())
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/core/credentials/flow.py", line 163, in Run
+    'Failed to find "code" in the query parameters of the redirect.')
+googlecloudsdk.core.credentials.flow.AuthRequestFailedError: Failed to find "code" in the query parameters of the redirect.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/calliope/cli.py", line 983, in Execute
+    resources = calliope_command.Run(cli=self, args=args)
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 808, in Run
+    resources = command_instance.Run(args)
+  File "/Users/colmlang/google-cloud-sdk/lib/surface/auth/login.py", line 186, in Run
+    creds = auth_util.DoInstalledAppBrowserFlow(launch_browser, scopes)
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/api_lib/auth/util.py", line 118, in DoInstalledAppBrowserFlow
+    client_secret=client_secret)
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/core/credentials/store.py", line 1166, in AcquireFromWebFlow
+    return RunWebFlow(webflow, launch_browser=launch_browser)
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/core/credentials/store.py", line 1189, in RunWebFlow
+    raise FlowError(e)
+googlecloudsdk.core.credentials.store.FlowError: Failed to find "code" in the query parameters of the redirect.
+2020-10-14 11:33:57,551 ERROR    root            (gcloud.auth.login) Failed to find "code" in the query parameters of the redirect.
+2020-10-14 11:33:57,551 INFO     root            [auth login --force --brief] has failed
+
+2020-10-14 11:33:57,551 DEBUG    root            (gcloud.init) Failed command: [auth login --force --brief] with exit code [1]
+Traceback (most recent call last):
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/core/credentials/store.py", line 1187, in RunWebFlow
+    cred = flow.Run(webflow, launch_browser=launch_browser, http=http.Http())
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/core/credentials/flow.py", line 163, in Run
+    'Failed to find "code" in the query parameters of the redirect.')
+googlecloudsdk.core.credentials.flow.AuthRequestFailedError: Failed to find "code" in the query parameters of the redirect.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/calliope/cli.py", line 983, in Execute
+    resources = calliope_command.Run(cli=self, args=args)
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 808, in Run
+    resources = command_instance.Run(args)
+  File "/Users/colmlang/google-cloud-sdk/lib/surface/auth/login.py", line 186, in Run
+    creds = auth_util.DoInstalledAppBrowserFlow(launch_browser, scopes)
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/api_lib/auth/util.py", line 118, in DoInstalledAppBrowserFlow
+    client_secret=client_secret)
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/core/credentials/store.py", line 1166, in AcquireFromWebFlow
+    return RunWebFlow(webflow, launch_browser=launch_browser)
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/core/credentials/store.py", line 1189, in RunWebFlow
+    raise FlowError(e)
+googlecloudsdk.core.credentials.store.FlowError: Failed to find "code" in the query parameters of the redirect.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/colmlang/google-cloud-sdk/lib/surface/init.py", line 501, in _RunCmd
+    self.ExecuteCommandDoNotUse(args))
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/calliope/base.py", line 593, in ExecuteCommandDoNotUse
+    return self._cli_power_users_only.Execute(args, call_arg_complete=False)
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/calliope/cli.py", line 1009, in Execute
+    self._HandleAllErrors(exc, command_path_string, specified_arg_names)
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/calliope/cli.py", line 1046, in _HandleAllErrors
+    exceptions.HandleError(exc, command_path_string, self.__known_error_handler)
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/calliope/exceptions.py", line 518, in HandleError
+    _Exit(known_exc)
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/calliope/exceptions.py", line 617, in _Exit
+    sys.exit(getattr(exc, 'exit_code', 1))
+SystemExit: 1
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/calliope/cli.py", line 983, in Execute
+    resources = calliope_command.Run(cli=self, args=args)
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 808, in Run
+    resources = command_instance.Run(args)
+  File "/Users/colmlang/google-cloud-sdk/lib/surface/init.py", line 147, in Run
+    if not self._PickAccount(args.console_only, preselected=args.account):
+  File "/Users/colmlang/google-cloud-sdk/lib/surface/init.py", line 213, in _PickAccount
+    disable_user_output=False):
+  File "/Users/colmlang/google-cloud-sdk/lib/surface/init.py", line 505, in _RunCmd
+    raise c_exc.FailedSubCommand(cmd + params, exc.code)
+googlecloudsdk.calliope.exceptions.FailedSubCommand: Failed command: [auth login --force --brief] with exit code [1]
+2020-10-14 11:33:57,553 ERROR    root            (gcloud.init) Failed command: [auth login --force --brief] with exit code [1]

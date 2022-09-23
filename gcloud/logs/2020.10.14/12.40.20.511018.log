@@ -1,0 +1,240 @@
+2020-10-14 12:40:20,511 DEBUG    root            Loaded Command Group: ['gcloud', 'app']
+2020-10-14 12:40:20,568 DEBUG    root            Loaded Command Group: ['gcloud', 'app', 'deploy']
+2020-10-14 12:40:20,570 DEBUG    root            Running [gcloud.app.deploy] with arguments: []
+2020-10-14 12:40:20,595 DEBUG    root            Loading runtimes experiment config from [gs://runtime-builders/experiments.yaml]
+2020-10-14 12:40:20,610 INFO     root            Reading [<googlecloudsdk.api_lib.storage.storage_util.ObjectReference object at 0x10e0b3710>]
+2020-10-14 12:40:20,829 DEBUG    root            
+Traceback (most recent call last):
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/api_lib/storage/storage_api.py", line 301, in ReadObject
+    self.client.objects.Get(get_req, download=download)
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/third_party/apis/storage/v1/storage_v1_client.py", line 1107, in Get
+    download=download)
+  File "/Users/colmlang/google-cloud-sdk/lib/third_party/apitools/base/py/base_api.py", line 709, in _RunMethod
+    download.InitializeDownload(http_request, client=self.client)
+  File "/Users/colmlang/google-cloud-sdk/lib/third_party/apitools/base/py/transfer.py", line 322, in InitializeDownload
+    raise exceptions.HttpError.FromResponse(response)
+apitools.base.py.exceptions.HttpNotFoundError: HttpError accessing <https://storage.googleapis.com/storage/v1/b/runtime-builders/o/experiments.yaml?alt=media>: response: <{'x-guploader-uploadid': 'ABg5-Uy-XIEUaZbs2uQEyOcTp5YqpOgItXe2SU3s8mLt0tMTqr46X3vQJFL3gGIJ65raCP8JIhfppv2RKkxatCU6gvQ', 'content-type': 'text/html; charset=UTF-8', 'date': 'Wed, 14 Oct 2020 19:40:20 GMT', 'vary': 'Origin, X-Origin', 'expires': 'Wed, 14 Oct 2020 19:40:20 GMT', 'cache-control': 'private, max-age=0', 'content-length': '49', 'server': 'UploadServer', 'alt-svc': 'h3-Q050=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-27=":443"; ma=2592000,h3-T051=":443"; ma=2592000,h3-T050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"', 'status': '404'}>, content <No such object: runtime-builders/experiments.yaml>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/api_lib/app/runtime_builders.py", line 269, in _Read
+    with contextlib.closing(storage_client.ReadObject(object_)) as f:
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/api_lib/storage/storage_api.py", line 305, in ReadObject
+    object_=object_ref, err=http_exc.HttpException(err)))
+googlecloudsdk.calliope.exceptions.BadFileException: Could not read [<googlecloudsdk.api_lib.storage.storage_util.ObjectReference object at 0x10e0b3710>]. Please retry: HTTPError 404: No such object: runtime-builders/experiments.yaml
+2020-10-14 12:40:20,831 DEBUG    root            Experiment config file could not be read. This error is informational, and does not cause a deployment to fail. Reason: Unable to read the runtimes experiment config: [gs://runtime-builders/experiments.yaml], error: Could not read [<googlecloudsdk.api_lib.storage.storage_util.ObjectReference object at 0x10e0b3710>]. Please retry: HTTPError 404: No such object: runtime-builders/experiments.yaml
+Traceback (most recent call last):
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/api_lib/storage/storage_api.py", line 301, in ReadObject
+    self.client.objects.Get(get_req, download=download)
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/third_party/apis/storage/v1/storage_v1_client.py", line 1107, in Get
+    download=download)
+  File "/Users/colmlang/google-cloud-sdk/lib/third_party/apitools/base/py/base_api.py", line 709, in _RunMethod
+    download.InitializeDownload(http_request, client=self.client)
+  File "/Users/colmlang/google-cloud-sdk/lib/third_party/apitools/base/py/transfer.py", line 322, in InitializeDownload
+    raise exceptions.HttpError.FromResponse(response)
+apitools.base.py.exceptions.HttpNotFoundError: HttpError accessing <https://storage.googleapis.com/storage/v1/b/runtime-builders/o/experiments.yaml?alt=media>: response: <{'x-guploader-uploadid': 'ABg5-Uy-XIEUaZbs2uQEyOcTp5YqpOgItXe2SU3s8mLt0tMTqr46X3vQJFL3gGIJ65raCP8JIhfppv2RKkxatCU6gvQ', 'content-type': 'text/html; charset=UTF-8', 'date': 'Wed, 14 Oct 2020 19:40:20 GMT', 'vary': 'Origin, X-Origin', 'expires': 'Wed, 14 Oct 2020 19:40:20 GMT', 'cache-control': 'private, max-age=0', 'content-length': '49', 'server': 'UploadServer', 'alt-svc': 'h3-Q050=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-27=":443"; ma=2592000,h3-T051=":443"; ma=2592000,h3-T050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"', 'status': '404'}>, content <No such object: runtime-builders/experiments.yaml>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/api_lib/app/runtime_builders.py", line 269, in _Read
+    with contextlib.closing(storage_client.ReadObject(object_)) as f:
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/api_lib/storage/storage_api.py", line 305, in ReadObject
+    object_=object_ref, err=http_exc.HttpException(err)))
+googlecloudsdk.calliope.exceptions.BadFileException: Could not read [<googlecloudsdk.api_lib.storage.storage_util.ObjectReference object at 0x10e0b3710>]. Please retry: HTTPError 404: No such object: runtime-builders/experiments.yaml
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/api_lib/app/runtime_builders.py", line 518, in LoadFromURI
+    with _Read(uri) as f:
+  File "/usr/local/Cellar/python@3.7/3.7.9/Frameworks/Python.framework/Versions/3.7/lib/python3.7/contextlib.py", line 112, in __enter__
+    return next(self.gen)
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/api_lib/app/runtime_builders.py", line 276, in _Read
+    raise FileReadError(six.text_type(e))
+googlecloudsdk.api_lib.app.runtime_builders.FileReadError: Could not read [<googlecloudsdk.api_lib.storage.storage_util.ObjectReference object at 0x10e0b3710>]. Please retry: HTTPError 404: No such object: runtime-builders/experiments.yaml
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/colmlang/google-cloud-sdk/lib/surface/app/deploy.py", line 138, in _ServerSideExperimentEnabled
+    runtimes_builder_root)
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/api_lib/app/runtime_builders.py", line 524, in LoadFromURI
+    .format(uri, e))
+googlecloudsdk.api_lib.app.runtime_builders.ExperimentsError: Unable to read the runtimes experiment config: [gs://runtime-builders/experiments.yaml], error: Could not read [<googlecloudsdk.api_lib.storage.storage_util.ObjectReference object at 0x10e0b3710>]. Please retry: HTTPError 404: No such object: runtime-builders/experiments.yaml
+2020-10-14 12:40:20,850 DEBUG    root            API endpoint: [https://appengine.googleapis.com/], API version: [v1]
+2020-10-14 12:40:20,860 INFO     oauth2client.client Refreshing access_token
+2020-10-14 12:40:21,435 INFO     ___FILE_ONLY___ Services to deploy:
+
+
+2020-10-14 12:40:21,435 INFO     ___FILE_ONLY___ descriptor:      [/Users/colmlang/helloapi-colmpat/target/appengine-staging/app.yaml]
+source:          [/Users/colmlang/helloapi-colmpat/target/appengine-staging]
+target project:  [colmpathello]
+target service:  [default]
+target version:  [20201014t124021]
+target url:      [https://colmpathello.wl.r.appspot.com]
+
+
+
+2020-10-14 12:40:21,435 DEBUG    root            No bucket specified, retrieving default bucket.
+2020-10-14 12:40:21,440 DEBUG    root            Using bucket [gs://staging.colmpathello.appspot.com].
+2020-10-14 12:40:21,595 INFO     ___FILE_ONLY___ Beginning deployment of service [default]...
+
+2020-10-14 12:40:21,596 INFO     root            Ignoring file [app.yaml]: File matches ignore regex.
+2020-10-14 12:40:22,149 INFO     root            Incremental upload skipped 0.0% of data
+2020-10-14 12:40:22,150 INFO     root            Incremental upload skipped 0.0% of data
+2020-10-14 12:40:22,150 INFO     root            Incremental upload skipped 0.0% of data
+2020-10-14 12:40:22,150 INFO     root            Incremental upload skipped 0.0% of data
+2020-10-14 12:40:22,150 INFO     root            Incremental upload skipped 0.0% of data
+2020-10-14 12:40:22,150 INFO     root            Incremental upload skipped 0.0% of data
+2020-10-14 12:40:22,150 INFO     root            Incremental upload skipped 0.0% of data
+2020-10-14 12:40:22,151 INFO     root            Incremental upload skipped 0.0% of data
+2020-10-14 12:40:22,151 INFO     root            Incremental upload skipped 0.0% of data
+2020-10-14 12:40:22,151 INFO     root            Incremental upload skipped 0.0% of data
+2020-10-14 12:40:22,151 INFO     root            Incremental upload skipped 0.0% of data
+2020-10-14 12:40:22,151 INFO     root            Incremental upload skipped 0.0% of data
+2020-10-14 12:40:22,151 INFO     root            Incremental upload skipped 0.0% of data
+2020-10-14 12:40:22,151 INFO     root            Incremental upload skipped 0.0% of data
+2020-10-14 12:40:22,152 INFO     root            Incremental upload skipped 0.0% of data
+2020-10-14 12:40:22,152 INFO     root            Incremental upload skipped 0.0% of data
+2020-10-14 12:40:22,152 INFO     root            Incremental upload skipped 0.0% of data
+2020-10-14 12:40:22,152 INFO     root            Incremental upload skipped 0.0% of data
+2020-10-14 12:40:22,152 INFO     root            Incremental upload skipped 0.0% of data
+2020-10-14 12:40:22,152 INFO     root            Incremental upload skipped 0.0% of data
+2020-10-14 12:40:22,152 INFO     root            Incremental upload skipped 0.0% of data
+2020-10-14 12:40:22,152 INFO     root            Incremental upload skipped 0.0% of data
+2020-10-14 12:40:22,153 INFO     root            Incremental upload skipped 0.0% of data
+2020-10-14 12:40:22,153 DEBUG    root            Uploading 23 files to Google Cloud Storage
+2020-10-14 12:40:22,153 DEBUG    root            Using [16] threads
+2020-10-14 12:40:22,154 INFO     ___FILE_ONLY___ ╔════════════════════════════════════════════════════════════╗
+
+2020-10-14 12:40:22,154 INFO     ___FILE_ONLY___ ╠═ Uploading 23 files to Google Cloud Storage               ═╣
+
+2020-10-14 12:40:22,154 INFO     ___FILE_ONLY___ ╚
+2020-10-14 12:40:22,227 INFO     root            Uploading [/Users/colmlang/helloapi-colmpat/target/appengine-staging/WEB-INF/classes/com/example/appengine/java8/ReturnListServlet.class] to [staging.colmpathello.appspot.com/490af39fd8713ca3a9dc8244e9215ce3fbb447d1]
+2020-10-14 12:40:22,230 INFO     root            Uploading [/var/folders/c7/4x3qpx6j0y18zh419gklg5kh0000gn/T/tmpb2_rd6fx/source-context.json] to [staging.colmpathello.appspot.com/435bfebfe3eba45997ce8d5e1690aaa613790a41]
+2020-10-14 12:40:22,234 INFO     root            Uploading [/Users/colmlang/helloapi-colmpat/target/appengine-staging/WEB-INF/lib/_ah_compiled_jsps-0000.jar] to [staging.colmpathello.appspot.com/4780aca1e699df973270fe7a920f3fae388d35e6]
+2020-10-14 12:40:22,238 INFO     root            Uploading [/Users/colmlang/helloapi-colmpat/target/appengine-staging/WEB-INF/classes/com/example/appengine/java8/ReturnListOfObjServlet.class] to [staging.colmpathello.appspot.com/7e27da508c55a17cc061ad73c621a0ed698df914]
+2020-10-14 12:40:22,243 INFO     root            Uploading [/Users/colmlang/helloapi-colmpat/target/appengine-staging/WEB-INF/classes/com/example/appengine/java8/HelloServlet.class] to [staging.colmpathello.appspot.com/96040c3f107efa7de0813c46f4c91f079d0f5f86]
+2020-10-14 12:40:22,246 INFO     root            Uploading [/Users/colmlang/helloapi-colmpat/target/appengine-staging/WEB-INF/appengine-generated/app.yaml] to [staging.colmpathello.appspot.com/9692b2769ec0489ea7b8c495d4c3d1ec0e332cc5]
+2020-10-14 12:40:22,247 INFO     root            Uploading [/Users/colmlang/helloapi-colmpat/target/appengine-staging/WEB-INF/lib/org.apache.taglibs.taglibs-standard-spec-1.2.5.jar] to [staging.colmpathello.appspot.com/c3bb98c30f75fef1e229d1d03cf8457de22f1ba0]
+2020-10-14 12:40:22,251 INFO     root            Uploading [/Users/colmlang/helloapi-colmpat/target/appengine-staging/WEB-INF/min-quickstart-web.xml] to [staging.colmpathello.appspot.com/96fb95eb8ae1cab61a964e446b541e59f22b0be3]
+2020-10-14 12:40:22,256 INFO     root            Uploading [/Users/colmlang/helloapi-colmpat/target/appengine-staging/WEB-INF/classes/com/example/appengine/java8/ReturnKeyValueServlet.class] to [staging.colmpathello.appspot.com/4070ec67216755c5247c258eab13e2d49f98d876]
+2020-10-14 12:40:22,258 INFO     root            Uploading [/Users/colmlang/helloapi-colmpat/target/appengine-staging/WEB-INF/classes/source-context.json] to [staging.colmpathello.appspot.com/399ab021f33f9df40857154f730476469c266096]
+2020-10-14 12:40:22,260 INFO     root            Uploading [/Users/colmlang/helloapi-colmpat/target/appengine-staging/WEB-INF/lib/gson-2.7.jar] to [staging.colmpathello.appspot.com/751f548c85fa49f330cecbb1875893f971b33c4e]
+2020-10-14 12:40:22,261 INFO     root            Uploading [/Users/colmlang/helloapi-colmpat/target/appengine-staging/WEB-INF/appengine-web.xml] to [staging.colmpathello.appspot.com/4d7e01fcb704b5e5d5f7a5aa383fab36430b986c]
+2020-10-14 12:40:22,261 INFO     root            Uploading [/Users/colmlang/helloapi-colmpat/target/appengine-staging/WEB-INF/lib/org.eclipse.jdt.ecj-3.19.0.jar] to [staging.colmpathello.appspot.com/99ccdf7b2a75afb720270ab888bb21d6159ee631]
+2020-10-14 12:40:22,267 INFO     root            Uploading [/Users/colmlang/helloapi-colmpat/target/appengine-staging/WEB-INF/classes/com/example/appengine/java8/ReturnListOfObjServlet$Foo.class] to [staging.colmpathello.appspot.com/bef84ee2fdc55897a7fc7b9a5bd3d6873a4ec408]
+2020-10-14 12:40:22,276 INFO     root            Uploading [/Users/colmlang/helloapi-colmpat/target/appengine-staging/hello.jsp] to [staging.colmpathello.appspot.com/131ba28b90b1fcc14df9ab6a1df66615aee17594]
+2020-10-14 12:40:22,279 INFO     root            Uploading [/Users/colmlang/helloapi-colmpat/target/appengine-staging/WEB-INF/lib/org.apache.taglibs.taglibs-standard-impl-1.2.5.jar] to [staging.colmpathello.appspot.com/9b9783ccb2a323383e6e20e36d368f8997b71967]
+2020-10-14 12:40:22,460 INFO     ___FILE_ONLY___ ══
+2020-10-14 12:40:22,466 INFO     root            Uploading [/Users/colmlang/helloapi-colmpat/target/appengine-staging/WEB-INF/lib/org.eclipse.jetty.apache-jsp-9.4.27.v20200227-nolog.jar] to [staging.colmpathello.appspot.com/ca022b3c1e110c59ac0ba43d1ea93d0dbb9c0c76]
+2020-10-14 12:40:22,488 INFO     ___FILE_ONLY___ ═══
+2020-10-14 12:40:22,493 INFO     root            Uploading [/Users/colmlang/helloapi-colmpat/target/appengine-staging/WEB-INF/web.xml] to [staging.colmpathello.appspot.com/ca414b5c23feeedd0e3102a00ef52f136893f2e8]
+2020-10-14 12:40:22,509 INFO     ___FILE_ONLY___ ══
+2020-10-14 12:40:22,514 INFO     root            Uploading [/Users/colmlang/helloapi-colmpat/target/appengine-staging/WEB-INF/lib/org.mortbay.jasper.apache-el-8.5.49.jar] to [staging.colmpathello.appspot.com/d2550406481e61df12fddb51c3a92922e78fbaa4]
+2020-10-14 12:40:22,572 INFO     ___FILE_ONLY___ ═══
+2020-10-14 12:40:22,576 INFO     ___FILE_ONLY___ ═══
+2020-10-14 12:40:22,583 INFO     root            Uploading [/Users/colmlang/helloapi-colmpat/target/appengine-staging/WEB-INF/lib/appengine-api-1.0-sdk-1.9.69.jar] to [staging.colmpathello.appspot.com/ea55839ee0a4ed134c9412f9b767cb46c59bc8f8]
+2020-10-14 12:40:22,587 INFO     root            Uploading [/Users/colmlang/helloapi-colmpat/target/appengine-staging/WEB-INF/quickstart-web.xml] to [staging.colmpathello.appspot.com/f3dc2c8605ec56f2de085467a259b4571223a43e]
+2020-10-14 12:40:22,609 INFO     ___FILE_ONLY___ ══
+2020-10-14 12:40:22,614 INFO     root            Uploading [/Users/colmlang/helloapi-colmpat/target/appengine-staging/WEB-INF/lib/org.mortbay.jasper.apache-jsp-8.5.49.jar] to [staging.colmpathello.appspot.com/f7df00a600ed147b7c8a7bdcc8cc4ffab203e5f2]
+2020-10-14 12:40:22,638 INFO     ___FILE_ONLY___ ═══
+2020-10-14 12:40:22,640 INFO     ___FILE_ONLY___ ══
+2020-10-14 12:40:22,644 INFO     root            Uploading [/Users/colmlang/helloapi-colmpat/target/appengine-staging/WEB-INF/classes/com/example/appengine/java8/AddNumsServlet.class] to [staging.colmpathello.appspot.com/fd749d940377c06a580ddca008247fd1f526e294]
+2020-10-14 12:40:22,645 INFO     ___FILE_ONLY___ ═══
+2020-10-14 12:40:22,648 INFO     ___FILE_ONLY___ ═══
+2020-10-14 12:40:22,683 INFO     ___FILE_ONLY___ ══
+2020-10-14 12:40:22,726 INFO     ___FILE_ONLY___ ═══
+2020-10-14 12:40:22,783 INFO     ___FILE_ONLY___ ══
+2020-10-14 12:40:22,825 INFO     ___FILE_ONLY___ ═══
+2020-10-14 12:40:22,893 INFO     ___FILE_ONLY___ ═══
+2020-10-14 12:40:22,917 INFO     ___FILE_ONLY___ ══
+2020-10-14 12:40:22,933 INFO     ___FILE_ONLY___ ═══
+2020-10-14 12:40:23,525 INFO     ___FILE_ONLY___ ══
+2020-10-14 12:40:24,079 INFO     ___FILE_ONLY___ ═══
+2020-10-14 12:40:26,599 INFO     ___FILE_ONLY___ ═══
+2020-10-14 12:40:32,569 INFO     ___FILE_ONLY___ ══
+2020-10-14 12:40:37,879 INFO     ___FILE_ONLY___ ═══
+2020-10-14 12:40:55,217 INFO     ___FILE_ONLY___ ═══
+2020-10-14 12:40:55,217 INFO     ___FILE_ONLY___ ╝
+
+2020-10-14 12:40:55,232 INFO     ___FILE_ONLY___ File upload done.
+
+2020-10-14 12:40:55,232 INFO     root            Manifest: [{'hello.jsp': {'sourceUrl': 'https://storage.googleapis.com/staging.colmpathello.appspot.com/131ba28b90b1fcc14df9ab6a1df66615aee17594', 'sha1Sum': '131ba28b90b1fcc14df9ab6a1df66615aee17594'}, 'WEB-INF/appengine-web.xml': {'sourceUrl': 'https://storage.googleapis.com/staging.colmpathello.appspot.com/4d7e01fcb704b5e5d5f7a5aa383fab36430b986c', 'sha1Sum': '4d7e01fcb704b5e5d5f7a5aa383fab36430b986c'}, 'WEB-INF/min-quickstart-web.xml': {'sourceUrl': 'https://storage.googleapis.com/staging.colmpathello.appspot.com/96fb95eb8ae1cab61a964e446b541e59f22b0be3', 'sha1Sum': '96fb95eb8ae1cab61a964e446b541e59f22b0be3'}, 'WEB-INF/quickstart-web.xml': {'sourceUrl': 'https://storage.googleapis.com/staging.colmpathello.appspot.com/f3dc2c8605ec56f2de085467a259b4571223a43e', 'sha1Sum': 'f3dc2c8605ec56f2de085467a259b4571223a43e'}, 'WEB-INF/web.xml': {'sourceUrl': 'https://storage.googleapis.com/staging.colmpathello.appspot.com/ca414b5c23feeedd0e3102a00ef52f136893f2e8', 'sha1Sum': 'ca414b5c23feeedd0e3102a00ef52f136893f2e8'}, 'WEB-INF/lib/_ah_compiled_jsps-0000.jar': {'sourceUrl': 'https://storage.googleapis.com/staging.colmpathello.appspot.com/4780aca1e699df973270fe7a920f3fae388d35e6', 'sha1Sum': '4780aca1e699df973270fe7a920f3fae388d35e6'}, 'WEB-INF/lib/appengine-api-1.0-sdk-1.9.69.jar': {'sourceUrl': 'https://storage.googleapis.com/staging.colmpathello.appspot.com/ea55839ee0a4ed134c9412f9b767cb46c59bc8f8', 'sha1Sum': 'ea55839ee0a4ed134c9412f9b767cb46c59bc8f8'}, 'WEB-INF/lib/gson-2.7.jar': {'sourceUrl': 'https://storage.googleapis.com/staging.colmpathello.appspot.com/751f548c85fa49f330cecbb1875893f971b33c4e', 'sha1Sum': '751f548c85fa49f330cecbb1875893f971b33c4e'}, 'WEB-INF/lib/org.apache.taglibs.taglibs-standard-impl-1.2.5.jar': {'sourceUrl': 'https://storage.googleapis.com/staging.colmpathello.appspot.com/9b9783ccb2a323383e6e20e36d368f8997b71967', 'sha1Sum': '9b9783ccb2a323383e6e20e36d368f8997b71967'}, 'WEB-INF/lib/org.apache.taglibs.taglibs-standard-spec-1.2.5.jar': {'sourceUrl': 'https://storage.googleapis.com/staging.colmpathello.appspot.com/c3bb98c30f75fef1e229d1d03cf8457de22f1ba0', 'sha1Sum': 'c3bb98c30f75fef1e229d1d03cf8457de22f1ba0'}, 'WEB-INF/lib/org.eclipse.jdt.ecj-3.19.0.jar': {'sourceUrl': 'https://storage.googleapis.com/staging.colmpathello.appspot.com/99ccdf7b2a75afb720270ab888bb21d6159ee631', 'sha1Sum': '99ccdf7b2a75afb720270ab888bb21d6159ee631'}, 'WEB-INF/lib/org.eclipse.jetty.apache-jsp-9.4.27.v20200227-nolog.jar': {'sourceUrl': 'https://storage.googleapis.com/staging.colmpathello.appspot.com/ca022b3c1e110c59ac0ba43d1ea93d0dbb9c0c76', 'sha1Sum': 'ca022b3c1e110c59ac0ba43d1ea93d0dbb9c0c76'}, 'WEB-INF/lib/org.mortbay.jasper.apache-el-8.5.49.jar': {'sourceUrl': 'https://storage.googleapis.com/staging.colmpathello.appspot.com/d2550406481e61df12fddb51c3a92922e78fbaa4', 'sha1Sum': 'd2550406481e61df12fddb51c3a92922e78fbaa4'}, 'WEB-INF/lib/org.mortbay.jasper.apache-jsp-8.5.49.jar': {'sourceUrl': 'https://storage.googleapis.com/staging.colmpathello.appspot.com/f7df00a600ed147b7c8a7bdcc8cc4ffab203e5f2', 'sha1Sum': 'f7df00a600ed147b7c8a7bdcc8cc4ffab203e5f2'}, 'WEB-INF/classes/source-context.json': {'sourceUrl': 'https://storage.googleapis.com/staging.colmpathello.appspot.com/399ab021f33f9df40857154f730476469c266096', 'sha1Sum': '399ab021f33f9df40857154f730476469c266096'}, 'WEB-INF/classes/com/example/appengine/java8/AddNumsServlet.class': {'sourceUrl': 'https://storage.googleapis.com/staging.colmpathello.appspot.com/fd749d940377c06a580ddca008247fd1f526e294', 'sha1Sum': 'fd749d940377c06a580ddca008247fd1f526e294'}, 'WEB-INF/classes/com/example/appengine/java8/HelloServlet.class': {'sourceUrl': 'https://storage.googleapis.com/staging.colmpathello.appspot.com/96040c3f107efa7de0813c46f4c91f079d0f5f86', 'sha1Sum': '96040c3f107efa7de0813c46f4c91f079d0f5f86'}, 'WEB-INF/classes/com/example/appengine/java8/ReturnKeyValueServlet.class': {'sourceUrl': 'https://storage.googleapis.com/staging.colmpathello.appspot.com/4070ec67216755c5247c258eab13e2d49f98d876', 'sha1Sum': '4070ec67216755c5247c258eab13e2d49f98d876'}, 'WEB-INF/classes/com/example/appengine/java8/ReturnListOfObjServlet$Foo.class': {'sourceUrl': 'https://storage.googleapis.com/staging.colmpathello.appspot.com/bef84ee2fdc55897a7fc7b9a5bd3d6873a4ec408', 'sha1Sum': 'bef84ee2fdc55897a7fc7b9a5bd3d6873a4ec408'}, 'WEB-INF/classes/com/example/appengine/java8/ReturnListOfObjServlet.class': {'sourceUrl': 'https://storage.googleapis.com/staging.colmpathello.appspot.com/7e27da508c55a17cc061ad73c621a0ed698df914', 'sha1Sum': '7e27da508c55a17cc061ad73c621a0ed698df914'}, 'WEB-INF/classes/com/example/appengine/java8/ReturnListServlet.class': {'sourceUrl': 'https://storage.googleapis.com/staging.colmpathello.appspot.com/490af39fd8713ca3a9dc8244e9215ce3fbb447d1', 'sha1Sum': '490af39fd8713ca3a9dc8244e9215ce3fbb447d1'}, 'WEB-INF/appengine-generated/app.yaml': {'sourceUrl': 'https://storage.googleapis.com/staging.colmpathello.appspot.com/9692b2769ec0489ea7b8c495d4c3d1ec0e332cc5', 'sha1Sum': '9692b2769ec0489ea7b8c495d4c3d1ec0e332cc5'}, 'source-context.json': {'sourceUrl': 'https://storage.googleapis.com/staging.colmpathello.appspot.com/435bfebfe3eba45997ce8d5e1690aaa613790a41', 'sha1Sum': '435bfebfe3eba45997ce8d5e1690aaa613790a41'}}]
+2020-10-14 12:40:55,233 DEBUG    root            Converted YAML to JSON: "{
+  "betaSettings": {
+    "auto_id_policy": "default"
+  },
+  "entrypoint": {
+    "shell": ""
+  },
+  "handlers": [
+    {
+      "script": {
+        "scriptPath": "unused"
+      },
+      "securityLevel": "SECURE_OPTIONAL",
+      "urlRegex": "/.*"
+    }
+  ],
+  "inboundServices": [
+    "INBOUND_SERVICE_WARMUP"
+  ],
+  "runtime": "java8",
+  "runtimeApiVersion": "user_defined",
+  "threadsafe": true
+}"
+2020-10-14 12:40:57,091 WARNING  root            You will be unable to deploy applications after November 30, 2019 without adding a billing instrument to your project. Please add one at https://console.cloud.google.com/billing/linkedaccount?colmpathello
+
+2020-10-14 12:40:57,092 DEBUG    root            Operation [apps/colmpathello/operations/313d30d0-b5eb-49a0-a1e8-97e0aa5369ed] not complete. Waiting to retry.
+2020-10-14 12:40:57,093 INFO     ___FILE_ONLY___ Updating service [default]...
+2020-10-14 12:40:58,286 DEBUG    root            Operation [apps/colmpathello/operations/313d30d0-b5eb-49a0-a1e8-97e0aa5369ed] not complete. Waiting to retry.
+2020-10-14 12:41:03,933 DEBUG    root            Operation [apps/colmpathello/operations/313d30d0-b5eb-49a0-a1e8-97e0aa5369ed] complete. Result: {
+    "done": true,
+    "error": {
+        "code": 7,
+        "message": "Access Not Configured. Cloud Build has not been used in project colmpathello before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/cloudbuild.googleapis.com/overview?project=colmpathello then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."
+    },
+    "metadata": {
+        "@type": "type.googleapis.com/google.appengine.v1.OperationMetadataV1",
+        "endTime": "2020-10-14T19:41:01.196Z",
+        "insertTime": "2020-10-14T19:40:57.037Z",
+        "method": "google.appengine.v1.Versions.CreateVersion",
+        "target": "apps/colmpathello/services/default/versions/20201014t124021",
+        "user": "colmplang@gmail.com",
+        "warning": [
+            "You will be unable to deploy applications after November 30, 2019 without adding a billing instrument to your project. Please add one at https://console.cloud.google.com/billing/linkedaccount?colmpathello"
+        ]
+    },
+    "name": "apps/colmpathello/operations/313d30d0-b5eb-49a0-a1e8-97e0aa5369ed"
+}
+2020-10-14 12:41:03,983 DEBUG    root            (gcloud.app.deploy) Error Response: [7] Access Not Configured. Cloud Build has not been used in project colmpathello before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/cloudbuild.googleapis.com/overview?project=colmpathello then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.
+Traceback (most recent call last):
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/calliope/cli.py", line 983, in Execute
+    resources = calliope_command.Run(cli=self, args=args)
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 808, in Run
+    resources = command_instance.Run(args)
+  File "/Users/colmlang/google-cloud-sdk/lib/surface/app/deploy.py", line 122, in Run
+    default_strategy=flex_image_build_option_default))
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/command_lib/app/deploy_util.py", line 651, in RunDeploy
+    ignore_file=args.ignore_file)
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/command_lib/app/deploy_util.py", line 433, in Deploy
+    extra_config_settings)
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/api_lib/app/appengine_api_client.py", line 208, in DeployService
+    poller=done_poller)
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/api_lib/app/operations_util.py", line 314, in WaitForOperation
+    sleep_ms=retry_interval)
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/api_lib/util/waiter.py", line 264, in WaitFor
+    sleep_ms, _StatusUpdate)
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/api_lib/util/waiter.py", line 326, in PollUntilDone
+    sleep_ms=sleep_ms)
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/core/util/retry.py", line 229, in RetryOnResult
+    if not should_retry(result, state):
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/api_lib/util/waiter.py", line 320, in _IsNotDone
+    return not poller.IsDone(operation)
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/api_lib/app/operations_util.py", line 183, in IsDone
+    encoding.MessageToPyValue(operation.error)))
+googlecloudsdk.api_lib.app.operations_util.OperationError: Error Response: [7] Access Not Configured. Cloud Build has not been used in project colmpathello before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/cloudbuild.googleapis.com/overview?project=colmpathello then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.
+2020-10-14 12:41:03,985 ERROR    root            (gcloud.app.deploy) Error Response: [7] Access Not Configured. Cloud Build has not been used in project colmpathello before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/cloudbuild.googleapis.com/overview?project=colmpathello then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.

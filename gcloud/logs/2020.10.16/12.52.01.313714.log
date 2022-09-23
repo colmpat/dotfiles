@@ -1,0 +1,45 @@
+2020-10-16 12:52:01,314 DEBUG    root            Loaded Command Group: ['gcloud', 'app']
+2020-10-16 12:52:01,342 DEBUG    root            Loaded Command Group: ['gcloud', 'app', 'create']
+2020-10-16 12:52:01,344 DEBUG    root            Running [gcloud.app.create] with arguments: [--project: "mastermindapi-colmpat"]
+2020-10-16 12:52:01,768 INFO     ___FILE_ONLY___ You are creating an app for project [mastermindapi-colmpat].
+
+2020-10-16 12:52:01,768 WARNING  root            Creating an App Engine application for a project is irreversible and the region
+cannot be changed. More information about regions is at
+<https://cloud.google.com/appengine/docs/locations>.
+
+2020-10-16 12:52:07,177 DEBUG    root            Received operation: [apps/mastermindapi-colmpat/operations/f87dc2bf-c4e6-496e-80c3-2e2d66e5a5f6]
+2020-10-16 12:52:07,177 DEBUG    root            Operation [apps/mastermindapi-colmpat/operations/f87dc2bf-c4e6-496e-80c3-2e2d66e5a5f6] not complete. Waiting to retry.
+2020-10-16 12:52:07,178 INFO     ___FILE_ONLY___ Creating App Engine application in project [mastermindapi-colmpat] and region [us-west2]....
+2020-10-16 12:52:08,366 DEBUG    root            Operation [apps/mastermindapi-colmpat/operations/f87dc2bf-c4e6-496e-80c3-2e2d66e5a5f6] not complete. Waiting to retry.
+2020-10-16 12:52:13,725 DEBUG    root            Operation [apps/mastermindapi-colmpat/operations/f87dc2bf-c4e6-496e-80c3-2e2d66e5a5f6] complete. Result: {
+    "done": true,
+    "metadata": {
+        "@type": "type.googleapis.com/google.appengine.v1.OperationMetadataV1",
+        "endTime": "2020-10-16T19:52:13.465Z",
+        "insertTime": "2020-10-16T19:52:06.888Z",
+        "method": "google.appengine.v1.Applications.CreateApplication",
+        "target": "apps/mastermindapi-colmpat",
+        "user": "colmplang@gmail.com"
+    },
+    "name": "apps/mastermindapi-colmpat/operations/f87dc2bf-c4e6-496e-80c3-2e2d66e5a5f6",
+    "response": {
+        "@type": "type.googleapis.com/google.appengine.v1.Application",
+        "authDomain": "gmail.com",
+        "codeBucket": "staging.mastermindapi-colmpat.appspot.com",
+        "databaseType": "CLOUD_DATASTORE_COMPATIBILITY",
+        "defaultBucket": "mastermindapi-colmpat.appspot.com",
+        "defaultHostname": "mastermindapi-colmpat.wl.r.appspot.com",
+        "featureSettings": {
+            "splitHealthChecks": true,
+            "useContainerOptimizedOs": true
+        },
+        "gcrDomain": "us.gcr.io",
+        "id": "mastermindapi-colmpat",
+        "locationId": "us-west2",
+        "name": "apps/mastermindapi-colmpat",
+        "servingStatus": "SERVING"
+    }
+}
+2020-10-16 12:52:13,885 INFO     ___FILE_ONLY___ Success! The app is now created. Please use `gcloud app deploy` to deploy your first app.
+
+2020-10-16 12:52:13,886 INFO     root            Display format: "none"

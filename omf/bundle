@@ -1,0 +1,12 @@
+package config
+package foreign-env
+package peco
+package z
+theme agnoster
+theme clearance
+theme default
+theme fishface
+theme fox
+theme numist
+theme solarfish
+theme zish

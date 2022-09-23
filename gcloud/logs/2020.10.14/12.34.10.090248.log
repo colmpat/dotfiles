@@ -1,0 +1,19 @@
+2020-10-14 12:34:10,094 DEBUG    root            Loaded Command Group: ['gcloud', 'init']
+2020-10-14 12:34:10,096 DEBUG    root            Running [gcloud.init] with arguments: []
+2020-10-14 12:34:10,096 INFO     ___FILE_ONLY___ Welcome! This command will take you through the configuration of gcloud.
+
+
+2020-10-14 12:34:10,097 INFO     ___FILE_ONLY___ Settings from your current configuration [default] are:
+
+2020-10-14 12:34:10,100 INFO     ___FILE_ONLY___ core:
+  account: colmplang@gmail.com
+  disable_usage_reporting: 'True'
+  project: colmpathello
+
+2020-10-14 12:34:10,100 INFO     ___FILE_ONLY___ 
+
+2020-10-14 12:34:18,198 INFO     ___FILE_ONLY___ 
+
+Command killed by keyboard interrupt
+
+

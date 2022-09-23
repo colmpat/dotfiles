@@ -1,0 +1,26 @@
+2020-10-14 11:39:12,254 DEBUG    root            Loaded Command Group: ['gcloud', 'projects']
+2020-10-14 11:39:12,260 DEBUG    root            Loaded Command Group: ['gcloud', 'projects', 'create']
+2020-10-14 11:39:12,263 DEBUG    root            Running [gcloud.projects.create] with arguments: [--set-as-default: "True", PROJECT_ID: "colmhello"]
+2020-10-14 11:39:12,877 INFO     ___FILE_ONLY___ Create in progress for [https://cloudresourcemanager.googleapis.com/v1/projects/colmhello].
+
+2020-10-14 11:39:12,878 INFO     ___FILE_ONLY___ Waiting for [operations/cp.5267757723595061016] to finish...
+2020-10-14 11:39:14,518 DEBUG    root            (gcloud.projects.create) Operation [cp.5267757723595061016] failed: 9: Callers must accept Terms of Service
+Traceback (most recent call last):
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/calliope/cli.py", line 983, in Execute
+    resources = calliope_command.Run(cli=self, args=args)
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 808, in Run
+    resources = command_instance.Run(args)
+  File "/Users/colmlang/google-cloud-sdk/lib/surface/projects/create.py", line 142, in Run
+    create_op = operations.WaitForOperation(create_op)
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/api_lib/resource_manager/operations.py", line 72, in WaitForOperation
+    return retryer.RetryPollOperation(poller, operation)
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/api_lib/resource_manager/operations.py", line 110, in RetryPollOperation
+    sleep_ms=self._first_retry_sleep_ms)
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/core/util/retry.py", line 219, in RetryOnResult
+    result = func(*args, **kwargs)
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/api_lib/resource_manager/operations.py", line 108, in <lambda>
+    lambda: operation_poller.Poll(operation),
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/api_lib/resource_manager/operations.py", line 144, in Poll
+    raise OperationFailedException(latest)
+googlecloudsdk.api_lib.resource_manager.operations.OperationFailedException: Operation [cp.5267757723595061016] failed: 9: Callers must accept Terms of Service
+2020-10-14 11:39:14,519 ERROR    root            (gcloud.projects.create) Operation [cp.5267757723595061016] failed: 9: Callers must accept Terms of Service

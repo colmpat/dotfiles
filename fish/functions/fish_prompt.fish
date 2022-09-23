@@ -1,0 +1,1 @@
+/Users/colmlang/.local/share/omf/themes/zephyr/fish_prompt.fish

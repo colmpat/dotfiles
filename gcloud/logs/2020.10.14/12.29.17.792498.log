@@ -1,0 +1,46 @@
+2020-10-14 12:29:17,793 DEBUG    root            Loaded Command Group: ['gcloud', 'app']
+2020-10-14 12:29:17,808 DEBUG    root            Loaded Command Group: ['gcloud', 'app', 'create']
+2020-10-14 12:29:17,809 DEBUG    root            Running [gcloud.app.create] with arguments: [--project: "colmpathello"]
+2020-10-14 12:29:18,199 INFO     ___FILE_ONLY___ You are creating an app for project [colmpathello].
+
+2020-10-14 12:29:18,199 WARNING  root            Creating an App Engine application for a project is irreversible and the region
+cannot be changed. More information about regions is at
+<https://cloud.google.com/appengine/docs/locations>.
+
+2020-10-14 12:31:05,725 DEBUG    root            Received operation: [apps/colmpathello/operations/61551a2a-a217-4758-b606-4513b4b8d941]
+2020-10-14 12:31:05,725 DEBUG    root            Operation [apps/colmpathello/operations/61551a2a-a217-4758-b606-4513b4b8d941] not complete. Waiting to retry.
+2020-10-14 12:31:05,726 INFO     ___FILE_ONLY___ Creating App Engine application in project [colmpathello] and region [us-west2]....
+2020-10-14 12:31:06,955 DEBUG    root            Operation [apps/colmpathello/operations/61551a2a-a217-4758-b606-4513b4b8d941] not complete. Waiting to retry.
+2020-10-14 12:31:12,823 DEBUG    root            Operation [apps/colmpathello/operations/61551a2a-a217-4758-b606-4513b4b8d941] not complete. Waiting to retry.
+2020-10-14 12:31:18,168 DEBUG    root            Operation [apps/colmpathello/operations/61551a2a-a217-4758-b606-4513b4b8d941] complete. Result: {
+    "done": true,
+    "metadata": {
+        "@type": "type.googleapis.com/google.appengine.v1.OperationMetadataV1",
+        "endTime": "2020-10-14T19:31:12.680Z",
+        "insertTime": "2020-10-14T19:31:05.306Z",
+        "method": "google.appengine.v1.Applications.CreateApplication",
+        "target": "apps/colmpathello",
+        "user": "colmplang@gmail.com"
+    },
+    "name": "apps/colmpathello/operations/61551a2a-a217-4758-b606-4513b4b8d941",
+    "response": {
+        "@type": "type.googleapis.com/google.appengine.v1.Application",
+        "authDomain": "gmail.com",
+        "codeBucket": "staging.colmpathello.appspot.com",
+        "databaseType": "CLOUD_DATASTORE_COMPATIBILITY",
+        "defaultBucket": "colmpathello.appspot.com",
+        "defaultHostname": "colmpathello.wl.r.appspot.com",
+        "featureSettings": {
+            "splitHealthChecks": true,
+            "useContainerOptimizedOs": true
+        },
+        "gcrDomain": "us.gcr.io",
+        "id": "colmpathello",
+        "locationId": "us-west2",
+        "name": "apps/colmpathello",
+        "servingStatus": "SERVING"
+    }
+}
+2020-10-14 12:31:18,343 INFO     ___FILE_ONLY___ Success! The app is now created. Please use `gcloud app deploy` to deploy your first app.
+
+2020-10-14 12:31:18,344 INFO     root            Display format: "none"

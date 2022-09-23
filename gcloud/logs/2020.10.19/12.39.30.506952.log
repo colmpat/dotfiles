@@ -1,0 +1,236 @@
+2020-10-19 12:39:30,509 DEBUG    root            Loaded Command Group: ['gcloud', 'app']
+2020-10-19 12:39:30,641 DEBUG    root            Loaded Command Group: ['gcloud', 'app', 'deploy']
+2020-10-19 12:39:30,644 DEBUG    root            Running [gcloud.app.deploy] with arguments: []
+2020-10-19 12:39:30,695 DEBUG    google_auth_httplib2 Making request: POST https://oauth2.googleapis.com/token
+2020-10-19 12:39:30,951 DEBUG    root            Loading runtimes experiment config from [gs://runtime-builders/experiments.yaml]
+2020-10-19 12:39:30,976 INFO     root            Reading [<googlecloudsdk.api_lib.storage.storage_util.ObjectReference object at 0x105d34250>]
+2020-10-19 12:39:31,206 DEBUG    root            
+Traceback (most recent call last):
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/api_lib/storage/storage_api.py", line 301, in ReadObject
+    self.client.objects.Get(get_req, download=download)
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/third_party/apis/storage/v1/storage_v1_client.py", line 1107, in Get
+    download=download)
+  File "/Users/colmlang/google-cloud-sdk/lib/third_party/apitools/base/py/base_api.py", line 709, in _RunMethod
+    download.InitializeDownload(http_request, client=self.client)
+  File "/Users/colmlang/google-cloud-sdk/lib/third_party/apitools/base/py/transfer.py", line 322, in InitializeDownload
+    raise exceptions.HttpError.FromResponse(response)
+apitools.base.py.exceptions.HttpNotFoundError: HttpError accessing <https://storage.googleapis.com/storage/v1/b/runtime-builders/o/experiments.yaml?alt=media>: response: <{'x-guploader-uploadid': 'ABg5-UySz05rzVBypbeUCZXAnJpGtIQAhJtIBORd4RkcIy8MfRSvmDRa-22m5i6DKAXY7qX5T2YY6q7T_orb6mWb770wbeGrzw', 'content-type': 'text/html; charset=UTF-8', 'date': 'Mon, 19 Oct 2020 19:39:31 GMT', 'vary': 'Origin, X-Origin', 'expires': 'Mon, 19 Oct 2020 19:39:31 GMT', 'cache-control': 'private, max-age=0', 'content-length': '49', 'server': 'UploadServer', 'alt-svc': 'h3-Q050=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-T051=":443"; ma=2592000,h3-T050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"', 'status': '404'}>, content <No such object: runtime-builders/experiments.yaml>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/api_lib/app/runtime_builders.py", line 269, in _Read
+    with contextlib.closing(storage_client.ReadObject(object_)) as f:
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/api_lib/storage/storage_api.py", line 305, in ReadObject
+    object_=object_ref, err=http_exc.HttpException(err)))
+googlecloudsdk.calliope.exceptions.BadFileException: Could not read [<googlecloudsdk.api_lib.storage.storage_util.ObjectReference object at 0x105d34250>]. Please retry: HTTPError 404: No such object: runtime-builders/experiments.yaml
+2020-10-19 12:39:31,213 DEBUG    root            Experiment config file could not be read. This error is informational, and does not cause a deployment to fail. Reason: Unable to read the runtimes experiment config: [gs://runtime-builders/experiments.yaml], error: Could not read [<googlecloudsdk.api_lib.storage.storage_util.ObjectReference object at 0x105d34250>]. Please retry: HTTPError 404: No such object: runtime-builders/experiments.yaml
+Traceback (most recent call last):
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/api_lib/storage/storage_api.py", line 301, in ReadObject
+    self.client.objects.Get(get_req, download=download)
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/third_party/apis/storage/v1/storage_v1_client.py", line 1107, in Get
+    download=download)
+  File "/Users/colmlang/google-cloud-sdk/lib/third_party/apitools/base/py/base_api.py", line 709, in _RunMethod
+    download.InitializeDownload(http_request, client=self.client)
+  File "/Users/colmlang/google-cloud-sdk/lib/third_party/apitools/base/py/transfer.py", line 322, in InitializeDownload
+    raise exceptions.HttpError.FromResponse(response)
+apitools.base.py.exceptions.HttpNotFoundError: HttpError accessing <https://storage.googleapis.com/storage/v1/b/runtime-builders/o/experiments.yaml?alt=media>: response: <{'x-guploader-uploadid': 'ABg5-UySz05rzVBypbeUCZXAnJpGtIQAhJtIBORd4RkcIy8MfRSvmDRa-22m5i6DKAXY7qX5T2YY6q7T_orb6mWb770wbeGrzw', 'content-type': 'text/html; charset=UTF-8', 'date': 'Mon, 19 Oct 2020 19:39:31 GMT', 'vary': 'Origin, X-Origin', 'expires': 'Mon, 19 Oct 2020 19:39:31 GMT', 'cache-control': 'private, max-age=0', 'content-length': '49', 'server': 'UploadServer', 'alt-svc': 'h3-Q050=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-T051=":443"; ma=2592000,h3-T050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"', 'status': '404'}>, content <No such object: runtime-builders/experiments.yaml>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/api_lib/app/runtime_builders.py", line 269, in _Read
+    with contextlib.closing(storage_client.ReadObject(object_)) as f:
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/api_lib/storage/storage_api.py", line 305, in ReadObject
+    object_=object_ref, err=http_exc.HttpException(err)))
+googlecloudsdk.calliope.exceptions.BadFileException: Could not read [<googlecloudsdk.api_lib.storage.storage_util.ObjectReference object at 0x105d34250>]. Please retry: HTTPError 404: No such object: runtime-builders/experiments.yaml
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/api_lib/app/runtime_builders.py", line 518, in LoadFromURI
+    with _Read(uri) as f:
+  File "/usr/local/Cellar/python@3.7/3.7.9/Frameworks/Python.framework/Versions/3.7/lib/python3.7/contextlib.py", line 112, in __enter__
+    return next(self.gen)
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/api_lib/app/runtime_builders.py", line 276, in _Read
+    raise FileReadError(six.text_type(e))
+googlecloudsdk.api_lib.app.runtime_builders.FileReadError: Could not read [<googlecloudsdk.api_lib.storage.storage_util.ObjectReference object at 0x105d34250>]. Please retry: HTTPError 404: No such object: runtime-builders/experiments.yaml
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/colmlang/google-cloud-sdk/lib/surface/app/deploy.py", line 138, in _ServerSideExperimentEnabled
+    runtimes_builder_root)
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/api_lib/app/runtime_builders.py", line 524, in LoadFromURI
+    .format(uri, e))
+googlecloudsdk.api_lib.app.runtime_builders.ExperimentsError: Unable to read the runtimes experiment config: [gs://runtime-builders/experiments.yaml], error: Could not read [<googlecloudsdk.api_lib.storage.storage_util.ObjectReference object at 0x105d34250>]. Please retry: HTTPError 404: No such object: runtime-builders/experiments.yaml
+2020-10-19 12:39:31,235 DEBUG    root            API endpoint: [https://appengine.googleapis.com/], API version: [v1]
+2020-10-19 12:39:31,253 INFO     oauth2client.client Refreshing access_token
+2020-10-19 12:39:31,822 INFO     ___FILE_ONLY___ Services to deploy:
+
+
+2020-10-19 12:39:31,823 INFO     ___FILE_ONLY___ descriptor:      [/Users/colmlang/IdeaProjects/mastermindapi-colmpat/target/appengine-staging/app.yaml]
+source:          [/Users/colmlang/IdeaProjects/mastermindapi-colmpat/target/appengine-staging]
+target project:  [mastermindapi-colmpat]
+target service:  [default]
+target version:  [20201019t123931]
+target url:      [https://mastermindapi-colmpat.wl.r.appspot.com]
+
+
+
+2020-10-19 12:39:31,823 DEBUG    root            No bucket specified, retrieving default bucket.
+2020-10-19 12:39:31,825 DEBUG    root            Using bucket [gs://staging.mastermindapi-colmpat.appspot.com].
+2020-10-19 12:39:31,981 INFO     ___FILE_ONLY___ Beginning deployment of service [default]...
+
+2020-10-19 12:39:31,982 INFO     root            Ignoring file [app.yaml]: File matches ignore regex.
+2020-10-19 12:39:32,390 DEBUG    root            Skipping upload of [mastermind.jsp]
+2020-10-19 12:39:32,391 INFO     root            Incremental upload skipped 100.0% of data
+2020-10-19 12:39:32,391 DEBUG    root            Skipping upload of [WEB-INF/appengine-web.xml]
+2020-10-19 12:39:32,391 INFO     root            Incremental upload skipped 100.0% of data
+2020-10-19 12:39:32,391 DEBUG    root            Skipping upload of [WEB-INF/min-quickstart-web.xml]
+2020-10-19 12:39:32,391 INFO     root            Incremental upload skipped 100.0% of data
+2020-10-19 12:39:32,391 DEBUG    root            Skipping upload of [WEB-INF/quickstart-web.xml]
+2020-10-19 12:39:32,391 INFO     root            Incremental upload skipped 100.0% of data
+2020-10-19 12:39:32,391 DEBUG    root            Skipping upload of [WEB-INF/web.xml]
+2020-10-19 12:39:32,391 INFO     root            Incremental upload skipped 100.0% of data
+2020-10-19 12:39:32,391 DEBUG    root            Skipping upload of [WEB-INF/lib/_ah_compiled_jsps-0000.jar]
+2020-10-19 12:39:32,392 INFO     root            Incremental upload skipped 100.0% of data
+2020-10-19 12:39:32,392 DEBUG    root            Skipping upload of [WEB-INF/lib/appengine-api-1.0-sdk-1.9.69.jar]
+2020-10-19 12:39:32,392 INFO     root            Incremental upload skipped 100.0% of data
+2020-10-19 12:39:32,392 DEBUG    root            Skipping upload of [WEB-INF/lib/gson-2.7.jar]
+2020-10-19 12:39:32,392 INFO     root            Incremental upload skipped 100.0% of data
+2020-10-19 12:39:32,392 DEBUG    root            Skipping upload of [WEB-INF/lib/org.apache.taglibs.taglibs-standard-impl-1.2.5.jar]
+2020-10-19 12:39:32,392 INFO     root            Incremental upload skipped 100.0% of data
+2020-10-19 12:39:32,392 DEBUG    root            Skipping upload of [WEB-INF/lib/org.apache.taglibs.taglibs-standard-spec-1.2.5.jar]
+2020-10-19 12:39:32,392 INFO     root            Incremental upload skipped 100.0% of data
+2020-10-19 12:39:32,392 DEBUG    root            Skipping upload of [WEB-INF/lib/org.eclipse.jdt.ecj-3.19.0.jar]
+2020-10-19 12:39:32,392 INFO     root            Incremental upload skipped 100.0% of data
+2020-10-19 12:39:32,393 DEBUG    root            Skipping upload of [WEB-INF/lib/org.eclipse.jetty.apache-jsp-9.4.27.v20200227-nolog.jar]
+2020-10-19 12:39:32,393 INFO     root            Incremental upload skipped 100.0% of data
+2020-10-19 12:39:32,393 DEBUG    root            Skipping upload of [WEB-INF/lib/org.mortbay.jasper.apache-el-8.5.49.jar]
+2020-10-19 12:39:32,393 INFO     root            Incremental upload skipped 100.0% of data
+2020-10-19 12:39:32,393 DEBUG    root            Skipping upload of [WEB-INF/lib/org.mortbay.jasper.apache-jsp-8.5.49.jar]
+2020-10-19 12:39:32,393 INFO     root            Incremental upload skipped 100.0% of data
+2020-10-19 12:39:32,393 DEBUG    root            Skipping upload of [WEB-INF/classes/source-context.json]
+2020-10-19 12:39:32,393 INFO     root            Incremental upload skipped 100.0% of data
+2020-10-19 12:39:32,393 INFO     root            Incremental upload skipped 100.0% of data
+2020-10-19 12:39:32,393 DEBUG    root            Skipping upload of [WEB-INF/classes/com/example/appengine/java8/MastermindHomeServlet.class]
+2020-10-19 12:39:32,393 INFO     root            Incremental upload skipped 100.0% of data
+2020-10-19 12:39:32,393 DEBUG    root            Skipping upload of [WEB-INF/classes/com/example/appengine/java8/NewGameServlet.class]
+2020-10-19 12:39:32,394 INFO     root            Incremental upload skipped 100.0% of data
+2020-10-19 12:39:32,394 DEBUG    root            Skipping upload of [WEB-INF/appengine-generated/app.yaml]
+2020-10-19 12:39:32,394 INFO     root            Incremental upload skipped 100.0% of data
+2020-10-19 12:39:32,394 DEBUG    root            Skipping upload of [source-context.json]
+2020-10-19 12:39:32,394 INFO     root            Incremental upload skipped 100.0% of data
+2020-10-19 12:39:32,394 DEBUG    root            Uploading 1 file to Google Cloud Storage
+2020-10-19 12:39:32,394 DEBUG    root            Using [16] threads
+2020-10-19 12:39:32,395 INFO     ___FILE_ONLY___ ╔════════════════════════════════════════════════════════════╗
+
+2020-10-19 12:39:32,395 INFO     ___FILE_ONLY___ ╠═ Uploading 1 file to Google Cloud Storage                 ═╣
+
+2020-10-19 12:39:32,395 INFO     ___FILE_ONLY___ ╚
+2020-10-19 12:39:32,402 INFO     root            Uploading [/Users/colmlang/IdeaProjects/mastermindapi-colmpat/target/appengine-staging/WEB-INF/classes/com/example/appengine/java8/Mastermind.class] to [staging.mastermindapi-colmpat.appspot.com/1cf3687e8bc84df014edfe554091e855339c8351]
+2020-10-19 12:39:32,672 INFO     ___FILE_ONLY___ ════════════════════════════════════════════════════════════
+2020-10-19 12:39:32,672 INFO     ___FILE_ONLY___ ╝
+
+2020-10-19 12:39:32,684 INFO     ___FILE_ONLY___ File upload done.
+
+2020-10-19 12:39:32,684 INFO     root            Manifest: [{'mastermind.jsp': {'sourceUrl': 'https://storage.googleapis.com/staging.mastermindapi-colmpat.appspot.com/d43da519cc4afa6a979010ffb961323791104419', 'sha1Sum': 'd43da519cc4afa6a979010ffb961323791104419'}, 'WEB-INF/appengine-web.xml': {'sourceUrl': 'https://storage.googleapis.com/staging.mastermindapi-colmpat.appspot.com/270125624090a4b36d85cfad2d8f711b7709fa23', 'sha1Sum': '270125624090a4b36d85cfad2d8f711b7709fa23'}, 'WEB-INF/min-quickstart-web.xml': {'sourceUrl': 'https://storage.googleapis.com/staging.mastermindapi-colmpat.appspot.com/37cdbff04f29bf95cd75bd741e07626476ac5f35', 'sha1Sum': '37cdbff04f29bf95cd75bd741e07626476ac5f35'}, 'WEB-INF/quickstart-web.xml': {'sourceUrl': 'https://storage.googleapis.com/staging.mastermindapi-colmpat.appspot.com/ce8fac3219a6cfd8d8c3b1a4a01056656dc78206', 'sha1Sum': 'ce8fac3219a6cfd8d8c3b1a4a01056656dc78206'}, 'WEB-INF/web.xml': {'sourceUrl': 'https://storage.googleapis.com/staging.mastermindapi-colmpat.appspot.com/9a771dceb5751ce43c5fdb53d1916d2396e58ba8', 'sha1Sum': '9a771dceb5751ce43c5fdb53d1916d2396e58ba8'}, 'WEB-INF/lib/_ah_compiled_jsps-0000.jar': {'sourceUrl': 'https://storage.googleapis.com/staging.mastermindapi-colmpat.appspot.com/b77a3795a83180e2d75f27ac8cbc31ca1446efaa', 'sha1Sum': 'b77a3795a83180e2d75f27ac8cbc31ca1446efaa'}, 'WEB-INF/lib/appengine-api-1.0-sdk-1.9.69.jar': {'sourceUrl': 'https://storage.googleapis.com/staging.mastermindapi-colmpat.appspot.com/ea55839ee0a4ed134c9412f9b767cb46c59bc8f8', 'sha1Sum': 'ea55839ee0a4ed134c9412f9b767cb46c59bc8f8'}, 'WEB-INF/lib/gson-2.7.jar': {'sourceUrl': 'https://storage.googleapis.com/staging.mastermindapi-colmpat.appspot.com/751f548c85fa49f330cecbb1875893f971b33c4e', 'sha1Sum': '751f548c85fa49f330cecbb1875893f971b33c4e'}, 'WEB-INF/lib/org.apache.taglibs.taglibs-standard-impl-1.2.5.jar': {'sourceUrl': 'https://storage.googleapis.com/staging.mastermindapi-colmpat.appspot.com/9b9783ccb2a323383e6e20e36d368f8997b71967', 'sha1Sum': '9b9783ccb2a323383e6e20e36d368f8997b71967'}, 'WEB-INF/lib/org.apache.taglibs.taglibs-standard-spec-1.2.5.jar': {'sourceUrl': 'https://storage.googleapis.com/staging.mastermindapi-colmpat.appspot.com/c3bb98c30f75fef1e229d1d03cf8457de22f1ba0', 'sha1Sum': 'c3bb98c30f75fef1e229d1d03cf8457de22f1ba0'}, 'WEB-INF/lib/org.eclipse.jdt.ecj-3.19.0.jar': {'sourceUrl': 'https://storage.googleapis.com/staging.mastermindapi-colmpat.appspot.com/99ccdf7b2a75afb720270ab888bb21d6159ee631', 'sha1Sum': '99ccdf7b2a75afb720270ab888bb21d6159ee631'}, 'WEB-INF/lib/org.eclipse.jetty.apache-jsp-9.4.27.v20200227-nolog.jar': {'sourceUrl': 'https://storage.googleapis.com/staging.mastermindapi-colmpat.appspot.com/ca022b3c1e110c59ac0ba43d1ea93d0dbb9c0c76', 'sha1Sum': 'ca022b3c1e110c59ac0ba43d1ea93d0dbb9c0c76'}, 'WEB-INF/lib/org.mortbay.jasper.apache-el-8.5.49.jar': {'sourceUrl': 'https://storage.googleapis.com/staging.mastermindapi-colmpat.appspot.com/d2550406481e61df12fddb51c3a92922e78fbaa4', 'sha1Sum': 'd2550406481e61df12fddb51c3a92922e78fbaa4'}, 'WEB-INF/lib/org.mortbay.jasper.apache-jsp-8.5.49.jar': {'sourceUrl': 'https://storage.googleapis.com/staging.mastermindapi-colmpat.appspot.com/f7df00a600ed147b7c8a7bdcc8cc4ffab203e5f2', 'sha1Sum': 'f7df00a600ed147b7c8a7bdcc8cc4ffab203e5f2'}, 'WEB-INF/classes/source-context.json': {'sourceUrl': 'https://storage.googleapis.com/staging.mastermindapi-colmpat.appspot.com/bfcbfb1b553001ab55cbaf36b94433daedff73a0', 'sha1Sum': 'bfcbfb1b553001ab55cbaf36b94433daedff73a0'}, 'WEB-INF/classes/com/example/appengine/java8/Mastermind.class': {'sourceUrl': 'https://storage.googleapis.com/staging.mastermindapi-colmpat.appspot.com/1cf3687e8bc84df014edfe554091e855339c8351', 'sha1Sum': '1cf3687e8bc84df014edfe554091e855339c8351'}, 'WEB-INF/classes/com/example/appengine/java8/MastermindHomeServlet.class': {'sourceUrl': 'https://storage.googleapis.com/staging.mastermindapi-colmpat.appspot.com/2ad615758b0bb0f46a450f3ebc9af54f6a63b914', 'sha1Sum': '2ad615758b0bb0f46a450f3ebc9af54f6a63b914'}, 'WEB-INF/classes/com/example/appengine/java8/NewGameServlet.class': {'sourceUrl': 'https://storage.googleapis.com/staging.mastermindapi-colmpat.appspot.com/2c1b0006cdbb0cd5513dda26ca8618ee1b0e3217', 'sha1Sum': '2c1b0006cdbb0cd5513dda26ca8618ee1b0e3217'}, 'WEB-INF/appengine-generated/app.yaml': {'sourceUrl': 'https://storage.googleapis.com/staging.mastermindapi-colmpat.appspot.com/9692b2769ec0489ea7b8c495d4c3d1ec0e332cc5', 'sha1Sum': '9692b2769ec0489ea7b8c495d4c3d1ec0e332cc5'}, 'source-context.json': {'sourceUrl': 'https://storage.googleapis.com/staging.mastermindapi-colmpat.appspot.com/49d160e7ef77c675abf1e4eef4fca2113b9ba60a', 'sha1Sum': '49d160e7ef77c675abf1e4eef4fca2113b9ba60a'}}]
+2020-10-19 12:39:32,686 DEBUG    root            Converted YAML to JSON: "{
+  "betaSettings": {
+    "auto_id_policy": "default"
+  },
+  "entrypoint": {
+    "shell": ""
+  },
+  "handlers": [
+    {
+      "script": {
+        "scriptPath": "unused"
+      },
+      "securityLevel": "SECURE_OPTIONAL",
+      "urlRegex": "/.*"
+    }
+  ],
+  "inboundServices": [
+    "INBOUND_SERVICE_WARMUP"
+  ],
+  "runtime": "java8",
+  "runtimeApiVersion": "user_defined",
+  "threadsafe": true
+}"
+2020-10-19 12:39:33,315 DEBUG    root            Operation [apps/mastermindapi-colmpat/operations/219c0720-ee0f-4f1e-8459-ff903c2b58df] not complete. Waiting to retry.
+2020-10-19 12:39:33,316 INFO     ___FILE_ONLY___ Updating service [default]...
+2020-10-19 12:39:34,517 DEBUG    root            Operation [apps/mastermindapi-colmpat/operations/219c0720-ee0f-4f1e-8459-ff903c2b58df] not complete. Waiting to retry.
+2020-10-19 12:39:39,868 DEBUG    root            Operation [apps/mastermindapi-colmpat/operations/219c0720-ee0f-4f1e-8459-ff903c2b58df] not complete. Waiting to retry.
+2020-10-19 12:39:45,168 DEBUG    root            Operation [apps/mastermindapi-colmpat/operations/219c0720-ee0f-4f1e-8459-ff903c2b58df] not complete. Waiting to retry.
+2020-10-19 12:39:50,448 DEBUG    root            Operation [apps/mastermindapi-colmpat/operations/219c0720-ee0f-4f1e-8459-ff903c2b58df] not complete. Waiting to retry.
+2020-10-19 12:39:56,308 DEBUG    root            Operation [apps/mastermindapi-colmpat/operations/219c0720-ee0f-4f1e-8459-ff903c2b58df] not complete. Waiting to retry.
+2020-10-19 12:40:01,553 DEBUG    root            Operation [apps/mastermindapi-colmpat/operations/219c0720-ee0f-4f1e-8459-ff903c2b58df] not complete. Waiting to retry.
+2020-10-19 12:40:07,622 DEBUG    root            Operation [apps/mastermindapi-colmpat/operations/219c0720-ee0f-4f1e-8459-ff903c2b58df] complete. Result: {
+    "done": true,
+    "metadata": {
+        "@type": "type.googleapis.com/google.appengine.v1.OperationMetadataV1",
+        "endTime": "2020-10-19T19:40:04.170Z",
+        "insertTime": "2020-10-19T19:39:33.269Z",
+        "method": "google.appengine.v1.Versions.CreateVersion",
+        "target": "apps/mastermindapi-colmpat/services/default/versions/20201019t123931",
+        "user": "colmplang@gmail.com"
+    },
+    "name": "apps/mastermindapi-colmpat/operations/219c0720-ee0f-4f1e-8459-ff903c2b58df",
+    "response": {
+        "@type": "type.googleapis.com/google.appengine.v1.Version",
+        "createTime": "2020-10-19T19:40:01Z",
+        "env": "standard",
+        "id": "20201019t123931",
+        "inboundServices": [
+            "INBOUND_SERVICE_WARMUP"
+        ],
+        "instanceClass": "F1",
+        "name": "apps/mastermindapi-colmpat/services/default/versions/20201019t123931",
+        "network": {},
+        "runtime": "java8",
+        "runtimeApiVersion": "user_defined",
+        "servingStatus": "SERVING",
+        "threadsafe": true,
+        "versionUrl": "https://20201019t123931-dot-mastermindapi-colmpat.appspot.com"
+    }
+}
+2020-10-19 12:40:08,413 DEBUG    root            Operation [apps/mastermindapi-colmpat/operations/9bd80884-37d5-4036-a9a4-f230022744bc] not complete. Waiting to retry.
+2020-10-19 12:40:08,414 INFO     ___FILE_ONLY___ Setting traffic split for service [default]...
+2020-10-19 12:40:09,585 DEBUG    root            Operation [apps/mastermindapi-colmpat/operations/9bd80884-37d5-4036-a9a4-f230022744bc] not complete. Waiting to retry.
+2020-10-19 12:40:15,591 DEBUG    root            Operation [apps/mastermindapi-colmpat/operations/9bd80884-37d5-4036-a9a4-f230022744bc] complete. Result: {
+    "done": true,
+    "metadata": {
+        "@type": "type.googleapis.com/google.appengine.v1.OperationMetadataV1",
+        "endTime": "2020-10-19T19:40:15.179Z",
+        "insertTime": "2020-10-19T19:40:08.268Z",
+        "method": "google.appengine.v1.Services.UpdateService",
+        "target": "apps/mastermindapi-colmpat/services/default",
+        "user": "colmplang@gmail.com"
+    },
+    "name": "apps/mastermindapi-colmpat/operations/9bd80884-37d5-4036-a9a4-f230022744bc",
+    "response": {
+        "@type": "type.googleapis.com/google.appengine.v1.Service",
+        "id": "default",
+        "name": "apps/mastermindapi-colmpat/services/default",
+        "split": {
+            "allocations": {
+                "20201019t123931": 1
+            }
+        }
+    }
+}
+2020-10-19 12:40:15,726 INFO     root            Previous default version [mastermindapi-colmpat/default/20201016t125825] is an automatically scaled standard environment app, so not stopping it.
+2020-10-19 12:40:15,727 INFO     ___FILE_ONLY___ Deployed service [default] to [https://mastermindapi-colmpat.wl.r.appspot.com]
+
+2020-10-19 12:40:15,727 INFO     ___FILE_ONLY___ 
+You can stream logs from the command line by running:
+  $ gcloud app logs tail -s default
+
+2020-10-19 12:40:15,727 INFO     ___FILE_ONLY___ 
+To view your application in the web browser run:
+  $ gcloud app browse
+
+2020-10-19 12:40:15,728 INFO     root            Display format: "none"
+2020-10-19 12:40:15,736 DEBUG    root            Checking for updates...

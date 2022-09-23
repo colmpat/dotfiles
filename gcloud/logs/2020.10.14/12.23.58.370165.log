@@ -1,0 +1,127 @@
+2020-10-14 12:23:58,371 DEBUG    root            Loaded Command Group: ['gcloud', 'app']
+2020-10-14 12:23:58,491 DEBUG    root            Loaded Command Group: ['gcloud', 'app', 'deploy']
+2020-10-14 12:23:58,494 DEBUG    root            Running [gcloud.app.deploy] with arguments: []
+2020-10-14 12:23:58,518 DEBUG    root            Loading runtimes experiment config from [gs://runtime-builders/experiments.yaml]
+2020-10-14 12:23:58,537 INFO     root            Reading [<googlecloudsdk.api_lib.storage.storage_util.ObjectReference object at 0x10bf06c50>]
+2020-10-14 12:23:58,760 DEBUG    root            
+Traceback (most recent call last):
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/api_lib/storage/storage_api.py", line 301, in ReadObject
+    self.client.objects.Get(get_req, download=download)
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/third_party/apis/storage/v1/storage_v1_client.py", line 1107, in Get
+    download=download)
+  File "/Users/colmlang/google-cloud-sdk/lib/third_party/apitools/base/py/base_api.py", line 709, in _RunMethod
+    download.InitializeDownload(http_request, client=self.client)
+  File "/Users/colmlang/google-cloud-sdk/lib/third_party/apitools/base/py/transfer.py", line 322, in InitializeDownload
+    raise exceptions.HttpError.FromResponse(response)
+apitools.base.py.exceptions.HttpNotFoundError: HttpError accessing <https://storage.googleapis.com/storage/v1/b/runtime-builders/o/experiments.yaml?alt=media>: response: <{'x-guploader-uploadid': 'ABg5-Ux8x6USKxivFD-1FdfEkCWjrE4IgBfEouJYYaTL3c2KlkEfvmPAhBQfoPXCu1tmFGODyqJs3gYHWTeRQfg4eQM', 'content-type': 'text/html; charset=UTF-8', 'date': 'Wed, 14 Oct 2020 19:23:58 GMT', 'vary': 'Origin, X-Origin', 'expires': 'Wed, 14 Oct 2020 19:23:58 GMT', 'cache-control': 'private, max-age=0', 'content-length': '49', 'server': 'UploadServer', 'alt-svc': 'h3-Q050=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-27=":443"; ma=2592000,h3-T051=":443"; ma=2592000,h3-T050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"', 'status': '404'}>, content <No such object: runtime-builders/experiments.yaml>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/api_lib/app/runtime_builders.py", line 269, in _Read
+    with contextlib.closing(storage_client.ReadObject(object_)) as f:
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/api_lib/storage/storage_api.py", line 305, in ReadObject
+    object_=object_ref, err=http_exc.HttpException(err)))
+googlecloudsdk.calliope.exceptions.BadFileException: Could not read [<googlecloudsdk.api_lib.storage.storage_util.ObjectReference object at 0x10bf06c50>]. Please retry: HTTPError 404: No such object: runtime-builders/experiments.yaml
+2020-10-14 12:23:58,764 DEBUG    root            Experiment config file could not be read. This error is informational, and does not cause a deployment to fail. Reason: Unable to read the runtimes experiment config: [gs://runtime-builders/experiments.yaml], error: Could not read [<googlecloudsdk.api_lib.storage.storage_util.ObjectReference object at 0x10bf06c50>]. Please retry: HTTPError 404: No such object: runtime-builders/experiments.yaml
+Traceback (most recent call last):
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/api_lib/storage/storage_api.py", line 301, in ReadObject
+    self.client.objects.Get(get_req, download=download)
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/third_party/apis/storage/v1/storage_v1_client.py", line 1107, in Get
+    download=download)
+  File "/Users/colmlang/google-cloud-sdk/lib/third_party/apitools/base/py/base_api.py", line 709, in _RunMethod
+    download.InitializeDownload(http_request, client=self.client)
+  File "/Users/colmlang/google-cloud-sdk/lib/third_party/apitools/base/py/transfer.py", line 322, in InitializeDownload
+    raise exceptions.HttpError.FromResponse(response)
+apitools.base.py.exceptions.HttpNotFoundError: HttpError accessing <https://storage.googleapis.com/storage/v1/b/runtime-builders/o/experiments.yaml?alt=media>: response: <{'x-guploader-uploadid': 'ABg5-Ux8x6USKxivFD-1FdfEkCWjrE4IgBfEouJYYaTL3c2KlkEfvmPAhBQfoPXCu1tmFGODyqJs3gYHWTeRQfg4eQM', 'content-type': 'text/html; charset=UTF-8', 'date': 'Wed, 14 Oct 2020 19:23:58 GMT', 'vary': 'Origin, X-Origin', 'expires': 'Wed, 14 Oct 2020 19:23:58 GMT', 'cache-control': 'private, max-age=0', 'content-length': '49', 'server': 'UploadServer', 'alt-svc': 'h3-Q050=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-27=":443"; ma=2592000,h3-T051=":443"; ma=2592000,h3-T050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"', 'status': '404'}>, content <No such object: runtime-builders/experiments.yaml>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/api_lib/app/runtime_builders.py", line 269, in _Read
+    with contextlib.closing(storage_client.ReadObject(object_)) as f:
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/api_lib/storage/storage_api.py", line 305, in ReadObject
+    object_=object_ref, err=http_exc.HttpException(err)))
+googlecloudsdk.calliope.exceptions.BadFileException: Could not read [<googlecloudsdk.api_lib.storage.storage_util.ObjectReference object at 0x10bf06c50>]. Please retry: HTTPError 404: No such object: runtime-builders/experiments.yaml
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/api_lib/app/runtime_builders.py", line 518, in LoadFromURI
+    with _Read(uri) as f:
+  File "/usr/local/Cellar/python@3.7/3.7.9/Frameworks/Python.framework/Versions/3.7/lib/python3.7/contextlib.py", line 112, in __enter__
+    return next(self.gen)
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/api_lib/app/runtime_builders.py", line 276, in _Read
+    raise FileReadError(six.text_type(e))
+googlecloudsdk.api_lib.app.runtime_builders.FileReadError: Could not read [<googlecloudsdk.api_lib.storage.storage_util.ObjectReference object at 0x10bf06c50>]. Please retry: HTTPError 404: No such object: runtime-builders/experiments.yaml
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/colmlang/google-cloud-sdk/lib/surface/app/deploy.py", line 138, in _ServerSideExperimentEnabled
+    runtimes_builder_root)
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/api_lib/app/runtime_builders.py", line 524, in LoadFromURI
+    .format(uri, e))
+googlecloudsdk.api_lib.app.runtime_builders.ExperimentsError: Unable to read the runtimes experiment config: [gs://runtime-builders/experiments.yaml], error: Could not read [<googlecloudsdk.api_lib.storage.storage_util.ObjectReference object at 0x10bf06c50>]. Please retry: HTTPError 404: No such object: runtime-builders/experiments.yaml
+2020-10-14 12:23:58,790 DEBUG    root            API endpoint: [https://appengine.googleapis.com/], API version: [v1]
+2020-10-14 12:23:58,804 INFO     oauth2client.client Refreshing access_token
+2020-10-14 12:23:59,293 DEBUG    root            No app found:
+Traceback (most recent call last):
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/command_lib/app/deploy_util.py", line 782, in _PossiblyCreateApp
+    return api_client.GetApplication()
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/api_lib/app/appengine_api_client.py", line 75, in GetApplication
+    return self.client.apps.Get(request)
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/third_party/apis/appengine/v1/appengine_v1_client.py", line 1119, in Get
+    config, request, global_params=global_params)
+  File "/Users/colmlang/google-cloud-sdk/lib/third_party/apitools/base/py/base_api.py", line 731, in _RunMethod
+    return self.ProcessHttpResponse(method_config, http_response, request)
+  File "/Users/colmlang/google-cloud-sdk/lib/third_party/apitools/base/py/base_api.py", line 737, in ProcessHttpResponse
+    self.__ProcessHttpResponse(method_config, http_response, request))
+  File "/Users/colmlang/google-cloud-sdk/lib/third_party/apitools/base/py/base_api.py", line 604, in __ProcessHttpResponse
+    http_response, method_config=method_config, request=request)
+apitools.base.py.exceptions.HttpNotFoundError: HttpError accessing <https://appengine.googleapis.com/v1/apps/colmhello?alt=json>: response: <{'vary': 'Origin, X-Origin, Referer', 'content-type': 'application/json; charset=UTF-8', 'date': 'Wed, 14 Oct 2020 19:23:59 GMT', 'server': 'ESF', 'cache-control': 'private', 'x-xss-protection': '0', 'x-frame-options': 'SAMEORIGIN', 'x-content-type-options': 'nosniff', 'alt-svc': 'h3-Q050=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-27=":443"; ma=2592000,h3-T051=":443"; ma=2592000,h3-T050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"', 'transfer-encoding': 'chunked', 'status': '404', 'content-length': '124', '-content-encoding': 'gzip'}>, content <{
+  "error": {
+    "code": 404,
+    "message": "Could not find Application \"colmhello\".",
+    "status": "NOT_FOUND"
+  }
+}
+>
+2020-10-14 12:23:59,296 DEBUG    root            (gcloud.app.deploy) The current Google Cloud project [colmhello] does not contain an App Engine application. Use `gcloud app create` to initialize an App Engine application within the project.
+Traceback (most recent call last):
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/command_lib/app/deploy_util.py", line 782, in _PossiblyCreateApp
+    return api_client.GetApplication()
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/api_lib/app/appengine_api_client.py", line 75, in GetApplication
+    return self.client.apps.Get(request)
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/third_party/apis/appengine/v1/appengine_v1_client.py", line 1119, in Get
+    config, request, global_params=global_params)
+  File "/Users/colmlang/google-cloud-sdk/lib/third_party/apitools/base/py/base_api.py", line 731, in _RunMethod
+    return self.ProcessHttpResponse(method_config, http_response, request)
+  File "/Users/colmlang/google-cloud-sdk/lib/third_party/apitools/base/py/base_api.py", line 737, in ProcessHttpResponse
+    self.__ProcessHttpResponse(method_config, http_response, request))
+  File "/Users/colmlang/google-cloud-sdk/lib/third_party/apitools/base/py/base_api.py", line 604, in __ProcessHttpResponse
+    http_response, method_config=method_config, request=request)
+apitools.base.py.exceptions.HttpNotFoundError: HttpError accessing <https://appengine.googleapis.com/v1/apps/colmhello?alt=json>: response: <{'vary': 'Origin, X-Origin, Referer', 'content-type': 'application/json; charset=UTF-8', 'date': 'Wed, 14 Oct 2020 19:23:59 GMT', 'server': 'ESF', 'cache-control': 'private', 'x-xss-protection': '0', 'x-frame-options': 'SAMEORIGIN', 'x-content-type-options': 'nosniff', 'alt-svc': 'h3-Q050=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-27=":443"; ma=2592000,h3-T051=":443"; ma=2592000,h3-T050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"', 'transfer-encoding': 'chunked', 'status': '404', 'content-length': '124', '-content-encoding': 'gzip'}>, content <{
+  "error": {
+    "code": 404,
+    "message": "Could not find Application \"colmhello\".",
+    "status": "NOT_FOUND"
+  }
+}
+>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/calliope/cli.py", line 983, in Execute
+    resources = calliope_command.Run(cli=self, args=args)
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 808, in Run
+    resources = command_instance.Run(args)
+  File "/Users/colmlang/google-cloud-sdk/lib/surface/app/deploy.py", line 122, in Run
+    default_strategy=flex_image_build_option_default))
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/command_lib/app/deploy_util.py", line 604, in RunDeploy
+    app = _PossiblyCreateApp(api_client, project)
+  File "/Users/colmlang/google-cloud-sdk/lib/googlecloudsdk/command_lib/app/deploy_util.py", line 798, in _PossiblyCreateApp
+    raise exceptions.MissingApplicationError(project)
+googlecloudsdk.command_lib.app.exceptions.MissingApplicationError: The current Google Cloud project [colmhello] does not contain an App Engine application. Use `gcloud app create` to initialize an App Engine application within the project.
+2020-10-14 12:23:59,297 ERROR    root            (gcloud.app.deploy) The current Google Cloud project [colmhello] does not contain an App Engine application. Use `gcloud app create` to initialize an App Engine application within the project.
