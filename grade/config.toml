@@ -1,32 +1,32 @@
-org = "cs315-s22"
-testspath = "~/tests"
+[Canvas]
+host_name = "canvas.instructure.com"
+access_token = "1018~j30ZmruVVW5otNwwrXui3Ie3R1g1kQ132NCwd0jgGUFFOzYGS7BsHa5aR0qj067p"
+course_name = "Computer Architecture - 03 (Fall 2022)"
+
+[CanvasMapper]
+map_path = "~/school/cs315/f22-map.csv"
+github_col_name = "GitHub Username"
+login_col_name = "SIS Login ID"
+
+[Config]
 students = [
- "manak-ahluwalia",
- "Akkun716",
- "jabenitez217",
- "KevinHaolinChen",
- "georginajcruz",
- "sinnedqd",
- "diofeng",
- "YulongGuo0229",
- "pablojosecode",
- "nickihashemi",
- "hbyhibiki",
- "rkaur17",
- "Justigo",
- "Cheonhong",
-	"jinXus135",
-	"YXL628",
-	"gmai44",
-	"nan0spasm",
-	"selviipalani",
-	"mirajp21",
-	"PokorneyJo",
-	"abrichards10",
-	"HunterMRocha",
-	"vysalinas615",
-	"Matthew-Tsang",
-	"uderek1",
-	"KristampsW",
-	"zwang203"
+	"ToddJBrewer",
+	"emcory",
+	"JacksonCrawford",
+	"KennethDannlyson",
+	"renzelpretzel0125",
+	"hbyhibiki",
+	"git547lab",
+	"NotCarbonatedWater",
+	"Maxxzzz",
+	"rnayakusf",
+	"Sreeramv20"
 ]
+
+[Git]
+org = "cs315-03-f22"
+credentials = "ssh"
+
+[Test]
+tests_path = "~/school/cs315/tests"
+# digital_path = "~/Digital/Digital.jar"
